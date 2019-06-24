@@ -1,3 +1,4 @@
+package com.indigo.mudbot.Weapons;
 public class Battleaxe extends WeaponsTemplate {
 public Battleaxe (){
 this.name = "Battleaxe";
