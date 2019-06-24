@@ -1,6 +1,5 @@
 package com.indigo.mudbot.Classes;
 
-import com.indigo.mudbot.Classes.ClassTemplate;
 public class Fighter extends ClassTemplate {
     public Fighter() {
         this.className = "Fighter";

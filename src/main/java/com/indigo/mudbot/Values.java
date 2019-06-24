@@ -1,6 +1,7 @@
 package com.indigo.mudbot;
 
 import com.indigo.mudbot.Classes.ClassTemplate;
+import com.indigo.mudbot.Classes.Fighter;
 import com.indigo.mudbot.Commands.Ping;
 import com.jagrosh.jdautilities.command.Command;
 
@@ -9,5 +10,6 @@ public class Values {
             new Ping()
     };
     public static ClassTemplate[] playerClasses = new ClassTemplate[]{
+            new Fighter()
     };
 }

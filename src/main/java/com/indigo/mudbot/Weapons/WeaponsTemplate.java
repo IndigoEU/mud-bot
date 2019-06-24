@@ -6,4 +6,5 @@ public class WeaponsTemplate {
     public int attack;
     public int rarity;
     public int price;
+    public float accuracy;
 }
