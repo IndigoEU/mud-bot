@@ -1,3 +1,4 @@
+package com.indigo.mudbot.Weapons;
 public class Spear extends WeaponsTemplate {
 public Spear (){
 this.name = "Spear";
