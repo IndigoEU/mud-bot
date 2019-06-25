@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Functions;
 
-import com.indigo.mudbot.DatabaseUser;
+import com.indigo.mudbot.Database.DatabaseUser;
 import com.indigo.mudbot.Main;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import net.dv8tion.jda.core.EmbedBuilder;

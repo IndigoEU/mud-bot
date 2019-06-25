@@ -1,33 +1,47 @@
 package com.indigo.mudbot;
 
-import com.jagrosh.jdautilities.command.Command;
+import com.indigo.mudbot.Database.DatabaseCharacter;
+import com.indigo.mudbot.Functions.Send;
 import com.jagrosh.jdautilities.command.CommandEvent;
-import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
-import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class SessionHandler {
-    private static Map<String, Session> sessionMap;
-    private List<String> players = new ArrayList<String>();
+    private static Map<String, Session> sessionMap = new HashMap<>();
+    private List<Player> players = new ArrayList<>();
 
-    public static createSession()
+    public void createSession(CommandEvent event)
     {
-
+        System.out.println("SESSION STARTING");
+        Player[] playing = new Player[4];
+        /*int amount = 0;
+        for(Player join : joinPlayers){
+            playing[amount] = join;
+            amount++;
+        }
+        int joined = joinPlayers.length;*/
+        for (int i = 0; i < 4; i++){
+            playing[i] = players.get(0);
+            players.remove(0);
+        }
+        sessionMap.put(String.valueOf(sessionMap.size()), new Session(sessionMap.size(), playing, Access.All));
+        Send.SimpleEmbed(event, "Session is starting now").queue();
     }
 
-    public static int getListSize()
+    public int getListSize()
     {
         return players.size();
     }
 
-    public static addToQueue(CommandEvent event)
+    public void addToQueue(CommandEvent event, DatabaseCharacter character)
     {
-        players.add(event.getAuthor());
-        event.reply("There are currently " + getListSize() + " players in queue.");
-
-        if(getListSize() >= 4)
-            createSession();
+        Player player = new Player(event.getAuthor().getId(), character);
+        players.add(player);
+        Send.SimpleEmbed(event, "Joined queue, there are currently " + players.size() +" players in queue").queue();
+        if(players.size() >= 4) createSession(event);
     }
 
 

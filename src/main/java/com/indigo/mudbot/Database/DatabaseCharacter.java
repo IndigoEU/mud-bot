@@ -1,4 +1,4 @@
-package com.indigo.mudbot;
+package com.indigo.mudbot.Database;
 
 import io.jsondb.annotation.Document;
 import io.jsondb.annotation.Id;

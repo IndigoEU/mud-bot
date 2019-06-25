@@ -1,5 +1,16 @@
 package com.indigo.mudbot;
 
-public class Player {
+import com.indigo.mudbot.Database.DatabaseCharacter;
 
+public class Player {
+    DatabaseCharacter character;
+    String id;
+    public Player(String id, DatabaseCharacter character){
+        this.id = id;
+        this.character = character;
+    }
+
+    public void Disconnect(){
+
+    }
 }

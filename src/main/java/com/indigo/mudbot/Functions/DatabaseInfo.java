@@ -1,7 +1,7 @@
 package com.indigo.mudbot.Functions;
 
-import com.indigo.mudbot.DatabaseCharacter;
-import com.indigo.mudbot.DatabaseUser;
+import com.indigo.mudbot.Database.DatabaseCharacter;
+import com.indigo.mudbot.Database.DatabaseUser;
 import com.indigo.mudbot.Main;
 
 public class DatabaseInfo {
@@ -20,6 +20,8 @@ public class DatabaseInfo {
     }
     public static String GetCharacterName(int slot, String user){
         DatabaseUser result = Main.getDatabase().getJsonDBTemplate().findById(user, DatabaseUser.class);
+        System.out.println(user);
+        System.out.println(result.getSlot2());
         int characterId;
         switch(slot){
             case 1:
@@ -34,7 +36,7 @@ public class DatabaseInfo {
             default:
                 characterId = result.getSlot4();
         }
-        DatabaseCharacter character = Main.getDatabase().getJsonDBTemplate().findById(characterId, DatabaseCharacter.class);
+        DatabaseCharacter character = Main.getDatabase().getJsonDBTemplate().findById(String.valueOf(characterId), DatabaseCharacter.class);
         return character.getName();
     }
 }

@@ -1,7 +1,9 @@
-package com.indigo.mudbot;
+package com.indigo.mudbot.Database;
 
 import io.jsondb.annotation.Document;
 import io.jsondb.annotation.Id;
+
+import javax.annotation.Nullable;
 
 @Document(collection = "user", schemaVersion = "1.0")
 public class DatabaseUser {
@@ -18,15 +20,11 @@ public class DatabaseUser {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-    public int getSlot1() {
-        return slot1;
-    }
+    public int getSlot1() { return slot1; }
     public void setSlot1(int slot1) {
         this.slot1 = slot1;
     }
-    public int getSlot2() {
-        return slot2;
-    }
+    public int getSlot2() { return slot2; }
     public void setSlot2(int slot2) {
         this.slot2 = slot2;
     }

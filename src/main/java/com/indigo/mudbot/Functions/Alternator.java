@@ -24,8 +24,6 @@ public class Alternator {
                 .replaceAll("le", "we")
                 .replaceAll("ro", "wo")
                 .replaceAll("v", "f");
-
-
         return bigowo;
     }
 }
