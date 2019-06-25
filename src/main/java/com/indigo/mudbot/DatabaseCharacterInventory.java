@@ -7,8 +7,21 @@ import io.jsondb.annotation.Id;
 public class DatabaseCharacterInventory {
     @Id
     private String inventoryId;
-    private int[] row1;
-    private int[] row2;
-    private int[] row3;
-    private int[] row4;
+    private int[][] inventory;
+
+    public String getInventoryId() {
+        return inventoryId;
+    }
+
+    public void setInventoryId(String inventoryId) {
+        this.inventoryId = inventoryId;
+    }
+
+    public int[][] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(int[][] inventory) {
+        this.inventory = inventory;
+    }
 }

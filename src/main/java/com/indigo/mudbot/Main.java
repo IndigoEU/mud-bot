@@ -14,10 +14,12 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class Main {
+    private static Database database;
+
     public static void main(String[] args) throws IOException, LoginException {
+        database = new Database();
         List<String> list = Files.readAllLines(Paths.get("config.txt"));
         String token = list.get(0);
-        String ownerId = list.get(1);
         EventWaiter waiter = new EventWaiter();
         CommandClientBuilder client = new CommandClientBuilder();
         client.addCommands(
@@ -30,5 +32,9 @@ public class Main {
                 .addEventListener(waiter)
                 .addEventListener(client.build())
                 .build();
+    }
+
+    public static Database getDatabase() {
+        return database;
     }
 }
