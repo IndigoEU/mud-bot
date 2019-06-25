@@ -1,4 +1,4 @@
-package com.example.hello;
+package com.indigo.mudbot.Functions;
 
 public class Alternator {
     public static String owoify(String toOwO) {
