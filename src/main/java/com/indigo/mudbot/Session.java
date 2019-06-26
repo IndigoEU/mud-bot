@@ -6,22 +6,23 @@ import net.dv8tion.jda.core.entities.Message;
 import net.dv8tion.jda.core.entities.MessageChannel;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
 public class Session {
     private File currentImg;
-    public int id;
-    public Player[] players;
-    public DungeonMap map;
-    public List<Message> statusMessage;
-    public EmbedBuilder pureMessage;
-    public Access access;
-    public MessageChannel[] statusChannels;
-    public Status status;
-    public Stack<String[]> chat;
+    private int id;
+    private Player[] players;
+    private DungeonMap map;
+    private List<Message> statusMessage = new ArrayList<>();
+    private EmbedBuilder pureMessage;
+    private Access access;
+    private MessageChannel[] statusChannels;
+    private Status status;
+    private Stack<String[]> chat = new Stack<>();
 
-    public Session(int id, Player[] players, MessageChannel[] statusChannels, Access access){
+    Session(int id, Player[] players, MessageChannel[] statusChannels, Access access){
         this.id = SessionHandler.getId();
         this.access = access;
         this.statusChannels = statusChannels;
@@ -29,12 +30,12 @@ public class Session {
         this.players = players;
     }
 
-    public void StartSession(){
+    void StartSession(){
         UpdateSession();
     }
 
 
-    public void UpdateSession(){
+    void UpdateSession(){
         MessageBuilder messageBuilder = new MessageBuilder();
         EmbedBuilder builder = new EmbedBuilder()
                 .setTitle("Welcome to the dungeon");
@@ -50,7 +51,7 @@ public class Session {
         pureMessage = builder;
         messageBuilder.setEmbed(builder.build());
         ClassLoader classLoader = ClassLoader.getSystemClassLoader();
-       currentImg = new File(classLoader.getResource("Environment/LUR.png").getFile());
+        currentImg = new File(classLoader.getResource("Environment/LUR.png").getFile());
         for(MessageChannel channel : statusChannels){
             channel.sendFile(currentImg, "LUR.png", messageBuilder.build()).queue(msg -> statusMessage.add(msg));
         }
@@ -62,6 +63,7 @@ public class Session {
         for(int i = chat.size(); i > 0 && counter < 25; i--){
             String[] chatVal = chat.get(i-1);
             embedBuilder.addField(chatVal[0], chatVal[1],false);
+            chat.remove(i-1);
             counter++;
         }
         MessageBuilder messageBuilder = new MessageBuilder()

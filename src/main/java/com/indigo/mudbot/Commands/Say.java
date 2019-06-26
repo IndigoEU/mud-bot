@@ -8,11 +8,13 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 public class Say extends Command {
     public Say(){
         this.name = "say";
+        this.guildOnly = false;
     }
 
     @Override
     protected void execute(CommandEvent event) {
         Session enter = Main.getSessionHandler().getSession(event.getAuthor().getId());
         enter.SendMessage(event.getAuthor().getName(), event.getArgs());
+        event.getMessage().delete().queue();
     }
 }

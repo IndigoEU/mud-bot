@@ -7,6 +7,6 @@ this.attack = 500;
 this.rarity = 4; 
 this.price = 350;
 this.accuracy = 80;
-this.description = slice and dice while looking cool, that´s how it works right?
+this.description = "Slice and dice while looking cool, that´s how it works right?";
           }
 }

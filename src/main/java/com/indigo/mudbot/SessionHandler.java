@@ -60,7 +60,7 @@ public class SessionHandler {
         players.add(player);
         channelMap.put(event.getAuthor().getId(), event.getChannel());
         Send.SimpleEmbed(event, "Joined queue, there are currently " + players.size() +" players in queue").queue();
-        if(players.size() >= 2) createSession(event);
+        if(players.size() >= 4) createSession(event);
     }
 
 

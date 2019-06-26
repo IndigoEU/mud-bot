@@ -7,6 +7,6 @@ this.attack = 2000;
 this.rarity = 5; 
 this.price =1000;
 this.accuracy = 15;
-this.description = the legendary bow of pure awesomeness as long as you can hit i guess?
+this.description = "The legendary bow of pure awesomeness as long as you can hit i guess?";
           }
 }

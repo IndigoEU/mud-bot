@@ -7,6 +7,6 @@ this.attack = 1;
 this.rarity = 1; 
 this.price = 1;
 this.accuracy = 100; 
-this.description = teenie tiny stabby-stab!  
+this.description = "Teenie tiny stabby-stab!";
           }
 }
