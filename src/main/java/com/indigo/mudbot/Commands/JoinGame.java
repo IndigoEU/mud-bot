@@ -4,6 +4,7 @@ import com.indigo.mudbot.Database.DatabaseCharacter;
 import com.indigo.mudbot.Functions.DatabaseInfo;
 import com.indigo.mudbot.Functions.Send;
 import com.indigo.mudbot.Main;
+import com.indigo.mudbot.Player;
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
@@ -18,12 +19,20 @@ public class JoinGame extends Command {
     public JoinGame(EventWaiter waiter){
         this.name = "joingame";
         this.waiter = waiter;
+        this.guildOnly = false;
     }
 
 
 
     @Override
     protected void execute(CommandEvent event) {
+        boolean repeat = false;
+        for(Player player : Main.getSessionHandler().getPlayers()){
+            if(player.getId().equals(event.getAuthor().getId())) repeat = true;
+        }
+        if(repeat){
+            Send.SimpleEmbed(event, "You're already in queue for a game").queue();
+        }
         List<String> exclusions = new ArrayList<>();
         StringBuilder slotInfo = new StringBuilder();
         for (int i = 0; i < 4; i++) {
@@ -57,7 +66,7 @@ public class JoinGame extends Command {
                     return;
                 }
                 final int updateSlot = slot;
-                if (exclusions.contains(updateSlot)) {
+                if (exclusions.contains(String.valueOf(updateSlot))) {
                     System.out.println("error");
                     return;
                 }

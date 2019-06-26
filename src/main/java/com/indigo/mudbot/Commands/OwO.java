@@ -15,12 +15,12 @@ public class OwO extends Command {
 
         if(owo)
         {
-            Main.getDatabase().getJsonDBTemplate().findById(event.getAuthor().getId(), DatabaseUser.class).setOwO(0);
+            Main.getDatabase().getJsonDBTemplate().findById(event.getAuthor().getId(), DatabaseUser.class).setOwO(false);
             Send.SimpleEmbed(event, "OwO", "Un-OwOification complete. Be happy with freedom.");
         }
         else
         {
-            Main.getDatabase().getJsonDBTemplate().findById(event.getAuthor().getId(), DatabaseUser.class).setOwO(1);
+            Main.getDatabase().getJsonDBTemplate().findById(event.getAuthor().getId(), DatabaseUser.class).setOwO(true);
             Send.SimpleEmbed(event, "OwO", "OwOification compwete.");
         }
     }

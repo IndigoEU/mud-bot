@@ -8,4 +8,4 @@ this.rarity = 2;
 this.price = 60;
 this.accuracy = 70;
           }
-}-
+}

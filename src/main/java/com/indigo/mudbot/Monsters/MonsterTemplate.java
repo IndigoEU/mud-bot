@@ -8,8 +8,4 @@ public class MonsterTemplate {
     public int damage;
     public int spawnChance; // 1 through 5 (5 - most likely to spawn)
     //public String[] loot; // this probably should be somehow tied to Items tab but I dunno how to connect that
-
-    public int attack() {
-
-    }
 }

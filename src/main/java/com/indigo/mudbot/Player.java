@@ -10,6 +10,10 @@ public class Player {
         this.character = character;
     }
 
+    public String getId() {
+        return this.id;
+    }
+
     public void Disconnect(){
 
     }
