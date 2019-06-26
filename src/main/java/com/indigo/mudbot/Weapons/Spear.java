@@ -7,5 +7,6 @@ this.attack = 10;
 this.rarity = 2; 
 this.price = 30;
 this.accuracy = 60;
+this.description = also stabby-stab, just longer and stronger!
           }
 }
