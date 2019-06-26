@@ -2,8 +2,7 @@ package com.indigo.mudbot.Functions;
 
 public class Alternator {
     public static String owoify(String toOwO) {
-        String bigowo = toOwO
-                .replaceAll("na", "nya")
+        String bigowo = toOwO.replaceAll("na", "nya")
                 .replaceAll("for", "fow")
                 .replaceAll("oo", "owo")
                 .replaceAll("fr", "fw")
@@ -23,7 +22,11 @@ public class Alternator {
                 .replaceAll("ra", "wa")
                 .replaceAll("le", "we")
                 .replaceAll("ro", "wo")
-                .replaceAll("v", "f");
+                .replaceAll("v", "f")
+                .replaceAll("r", "w")
+                .replaceAll("R", "W")
+                .replaceAll("Na", "Nya")
+                .replaceAll("NA", "NYA");
         return bigowo;
     }
 }

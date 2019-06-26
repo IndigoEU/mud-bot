@@ -1,10 +1,8 @@
 package com.indigo.mudbot.Weapons;
 
-public class WeaponsTemplate {
-    public String name;
-    public String assetName;
+import com.indigo.mudbot.Items.ItemTemplate;
+
+public class WeaponsTemplate extends ItemTemplate{
     public int attack;
-    public int rarity;
-    public int price;
     public float accuracy;
 }
