@@ -7,4 +7,5 @@ public class ItemTemplate {
     public boolean canDrop;
     public String name;
     public String assetName;
+    public String description;
 }
