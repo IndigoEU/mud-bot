@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SessionHandler {
+    private static Map<String, String> playerMap = new HashMap<>();
     private static Map<String, Session> sessionMap = new HashMap<>();
     private static Map<String, MessageChannel> channelMap = new HashMap<>();
     private List<Player> players = new ArrayList<>();
@@ -20,22 +21,27 @@ public class SessionHandler {
     public void createSession(CommandEvent event)
     {
         System.out.println("SESSION STARTING");
-        Player[] playing = new Player[4];
+        List<Player> playing = new ArrayList<>();
         /*int amount = 0;
         for(Player join : joinPlayers){
             playing[amount] = join;
             amount++;
         }
         int joined = joinPlayers.length;*/
+
         List<MessageChannel> channels = new ArrayList<>();
-        for (int i = 0; i < 4; i++){
-            playing[i] = players.get(0);
-            channels.add(channelMap.get(playing[i].getId()));
-            System.out.println(channelMap.get(playing[i].getId()));
+        int size = players.size();
+        for (int i = 0; i < 4 && i < size; i++){
+            playing.add(players.get(0));
+            channels.add(channelMap.get(players.get(0).getId()));
+            System.out.println(channelMap.get(players.get(0).getId()));
             players.remove(0);
         }
         MessageChannel[] channelArray = channels.toArray(new MessageChannel[0]);
-        Session session = new Session(sessionMap.size(), playing, channelArray, Access.All);
+        for(Player player : playing) {
+            playerMap.put(player.getId(), String.valueOf(sessionMap.size()));
+        }
+        Session session = new Session(sessionMap.size(), playing.toArray(new Player[0]), channelArray, Access.All);
         sessionMap.put(String.valueOf(sessionMap.size()), session);
         session.StartSession();
     }
@@ -54,11 +60,15 @@ public class SessionHandler {
         players.add(player);
         channelMap.put(event.getAuthor().getId(), event.getChannel());
         Send.SimpleEmbed(event, "Joined queue, there are currently " + players.size() +" players in queue").queue();
-        if(players.size() >= 4) createSession(event);
+        if(players.size() >= 2) createSession(event);
     }
 
 
     public static int getId(){
         return 1;
+    }
+
+    public Session getSession(String id) {
+        return sessionMap.get(playerMap.get(id));
     }
 }

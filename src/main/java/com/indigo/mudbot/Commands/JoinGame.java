@@ -32,6 +32,7 @@ public class JoinGame extends Command {
         }
         if(repeat){
             Send.SimpleEmbed(event, "You're already in queue for a game").queue();
+            return;
         }
         List<String> exclusions = new ArrayList<>();
         StringBuilder slotInfo = new StringBuilder();
@@ -66,10 +67,10 @@ public class JoinGame extends Command {
                     return;
                 }
                 final int updateSlot = slot;
-                if (exclusions.contains(String.valueOf(updateSlot))) {
+                /**if (exclusions.contains(String.valueOf(updateSlot))) {
                     System.out.println("error");
                     return;
-                }
+                }*/
                 DatabaseCharacter character = Main.getDatabase().getJsonDBTemplate().findById(DatabaseInfo.GetCharacterSlots(updateSlot, event.getAuthor().getId()), DatabaseCharacter.class);
                 Main.getSessionHandler().addToQueue(event, character);
             });
