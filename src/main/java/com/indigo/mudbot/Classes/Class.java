@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Classes;
 
-public class ClassTemplate {
+public class Class {
     public String className;
     public int maxHP;
     public int XP;

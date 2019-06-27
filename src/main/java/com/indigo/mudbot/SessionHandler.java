@@ -41,7 +41,7 @@ public class SessionHandler {
         for(Player player : playing) {
             playerMap.put(player.getId(), String.valueOf(sessionMap.size()));
         }
-        Session session = new Session(sessionMap.size(), playing.toArray(new Player[0]), channelArray, Access.All);
+        Session session = new Session(sessionMap.size(), playing.toArray(new Player[0]), channelArray, Main.waiter, Access.All);
         sessionMap.put(String.valueOf(sessionMap.size()), session);
         session.StartSession();
     }
@@ -60,7 +60,7 @@ public class SessionHandler {
         players.add(player);
         channelMap.put(event.getAuthor().getId(), event.getChannel());
         Send.SimpleEmbed(event, "Joined queue, there are currently " + players.size() +" players in queue").queue();
-        if(players.size() >= 4) createSession(event);
+        if(players.size() >= 1) createSession(event);
     }
 
 

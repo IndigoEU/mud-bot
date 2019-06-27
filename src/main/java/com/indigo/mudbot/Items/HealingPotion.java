@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Items;
 
-public class HealingPotion extends ItemTemplate {
+public class HealingPotion extends Item {
     public HealingPotion() {
         this.name = "Healing Potion";
         this.assetName = "healingpotion";

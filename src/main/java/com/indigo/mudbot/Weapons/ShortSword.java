@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Weapons;
 
-public class ShortSword extends WeaponsTemplate {
+public class ShortSword extends Weapon {
     public ShortSword(){
         this.name = "Short sword";
         this.assetName = "shortsword";

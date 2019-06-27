@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Classes;
 
-public class Fighter extends ClassTemplate {
+public class Fighter extends Class {
     public Fighter() {
         this.className = "Fighter";
         this.maxHP = 100;

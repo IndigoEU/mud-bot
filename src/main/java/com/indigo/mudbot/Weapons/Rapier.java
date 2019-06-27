@@ -1,5 +1,5 @@
 package com.indigo.mudbot.Weapons; 
-public class Rapier extends WeaponsTemplate {
+public class Rapier extends Weapon {
 public Rapier (){
 this.name = "Rapier";
 this.assetName = "rapier";

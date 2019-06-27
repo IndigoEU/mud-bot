@@ -1,79 +1,66 @@
 package com.indigo.mudbot;
 
-import com.indigo.mudbot.Classes.ClassTemplate;
+import com.indigo.mudbot.Classes.Class;
 import com.indigo.mudbot.Classes.Fighter;
-import com.indigo.mudbot.Commands.CreateCharacter;
-import com.indigo.mudbot.Commands.JoinGame;
-import com.indigo.mudbot.Commands.Ping;
-import com.indigo.mudbot.Commands.Say;
-import com.indigo.mudbot.Items.ItemTemplate;
+import com.indigo.mudbot.Commands.*;
 import com.indigo.mudbot.Items.Bone;
 import com.indigo.mudbot.Items.HealingPotion;
+import com.indigo.mudbot.Items.Item;
 import com.indigo.mudbot.Items.Slimeball;
-import com.indigo.mudbot.Weapons.WeaponTemplate;
-import com.indigo.mudbot.Weapons.Battleaxe;
-import com.indigo.mudbot.Weapons.Bow;
-import com.indigo.mudbot.Weapons.Dagger;
-import com.indigo.mudbot.Weapons.Flail;
-import com.indigo.mudbot.Weapons.Hammer;
-import com.indigo.mudbot.Weapons.Longsword;
-import com.indigo.mudbot.Weapons.Rapier;
-import com.indigo.mudbot.Weapons.Scythe;
-import com.indigo.mudbot.Weapons.ShortSword;
-import com.indigo.mudbot.Weapons.Shovel;
-import com.indigo.mudbot.Weapons.Spear;
-import com.indigo.mudbot.Weapons.Torch;
-import com.indigo.mudbot.Monsters.MonsterTemplate;
-import com.indigo.mudbot.Monsters.DemonCat;
-import com.indigo.mudbot.Monsters.GnomeReaper;
-import com.indigo.mudbot.Monsters.MutatedFlesh;
-import com.indigo.mudbot.Monsters.SaltElemental;
-import com.indigo.mudbot.Monsters.ScrissorRat;
-import com.indigo.mudbot.Monsters.Skeleton;
-import com.indigo.mudbot.Monsters.Slime;
-import com.indigo.mudbot.Monsters.SmallFungus;
-import com.indigo.mudbot.Monsters.Spider;
+import com.indigo.mudbot.Weapons.*;
 import com.jagrosh.jdautilities.command.Command;
-import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
+import javafx.beans.binding.SetExpression;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Values {
+    public static final String NO_ITEM = "<:InventoryMud:593132719630712862>";
+    public static final String CURRENCY = "<:wisp:593315078539968532>";
     public static Command[] Commands = new Command[]{
             new Ping(),
             new CreateCharacter(Main.waiter),
             new JoinGame(Main.waiter),
-            new Say()
+            new Say(),
+            new Inventory(Main.waiter),
+            new Equip(Main.waiter),
+            new Move()
     };
-    public static ClassTemplate[] playerClasses = new ClassTemplate[]{
+    public static Class[] playerClasses = new Class[]{
             new Fighter()
     };
-    public static ItemTemplate Map<String, Item> = new ItemTemplate Map<String, Item> {
-            new Bone();
-            new HealingPotion();
-            new Slimeball();
-    };
-    public static WeaponTemplate Map<String, Item> = new WeaponTemplate Map<String, Item> {
-            new Battleaxe();
-            new Bow();
-            new Dagger();
-            new Flail();
-            new Hammer();
-            new Longsword();
-            new Rapier();
-            new Scythe();
-            new ShortSword();
-            new Shovel();
-            new Spear();
-            new Torch();
-    };
-    public static MonsterTemplate Map<String, Monster> = new MonsterTemplate Map<String, Monster> {
-            new DemonCat();
-            new GnomeReaper();
-            new MutatedFlesh();
-            new SaltElemental();
-            new ScrissorRat();
-            new Skeleton();
-            new Slime();
-            new SmallFungus();
-            new Spider();
-    };
+    public static Map<Integer, Item> Items = new HashMap<>();
+    public static Map<Integer, Weapon> Weapons = new HashMap<>();
+    public static Map<Integer, Shop> Shops = new HashMap<>();
+
+    static{
+        Items.put(1, new Battleaxe());
+        Items.put(2, new Bow());
+        Items.put(3, new Dagger());
+        Items.put(4, new Flail());
+        Items.put(5, new Hammer());
+        Items.put(6, new Longsword());
+        Items.put(7, new Rapier());
+        Items.put(8, new Scythe());
+        Items.put(9, new ShortSword());
+        Items.put(10, new Shovel());
+        Items.put(11, new Torch());
+        Items.put(12, new Bone());
+        Items.put(13, new HealingPotion());
+        Items.put(14, new Slimeball());
+
+        Weapons.put(1, new Battleaxe());
+        Weapons.put(2, new Bow());
+        Weapons.put(3, new Dagger());
+        Weapons.put(4, new Flail());
+        Weapons.put(5, new Hammer());
+        Weapons.put(6, new Longsword());
+        Weapons.put(7, new Rapier());
+        Weapons.put(8, new Scythe());
+        Weapons.put(9, new ShortSword());
+        Weapons.put(10, new Shovel());
+        Weapons.put(11, new Torch());
+
+        Shops.put(1, new Shop(new Dagger(), new Torch(), new Shovel()));
+    }
 }

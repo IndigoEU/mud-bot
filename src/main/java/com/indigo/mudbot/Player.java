@@ -14,6 +14,10 @@ public class Player {
         return this.id;
     }
 
+    public String getName(){
+        return this.character.getName();
+    }
+
     public void Disconnect(){
 
     }

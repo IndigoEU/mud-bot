@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Items;
 
-public class Slimeball extends ItemTemplate {
+public class Slimeball extends Item {
     public Slimeball() {
         this.name = "Slimeball";
         this.assetName = "slimeball";
