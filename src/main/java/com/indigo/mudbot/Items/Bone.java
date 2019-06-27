@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Items;
 
-public class Bone extends ItemTemplate {
+public class Bone extends Item {
     public Bone() {
         this.name = "Bone";
         this.assetName = "bone";

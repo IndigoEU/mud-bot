@@ -1,5 +1,5 @@
 package com.indigo.mudbot.Weapons;
-public class Shovel extends WeaponsTemplate {
+public class Shovel extends Weapon {
 public Shovel (){
 this.name = "Shovel";
 this.assetName = "shovel";

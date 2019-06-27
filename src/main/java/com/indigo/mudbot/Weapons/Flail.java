@@ -1,8 +1,8 @@
 package com.indigo.mudbot.Weapons;
-public class Flail extends WeaponsTemplate {
+public class Flail extends Weapon {
 public Flail (){
 this.name = "Flail";
-this.assetName = "flail";
+this.assetName = "<:FlailMud:593835859501907983>";
 this.attack = 40;
 this.rarity = 2; 
 this.price = 60;

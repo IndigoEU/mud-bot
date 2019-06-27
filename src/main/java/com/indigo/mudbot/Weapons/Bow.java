@@ -1,8 +1,8 @@
 package com.indigo.mudbot.Weapons;
-public class Bow extends WeaponsTemplate {
+public class Bow extends Weapon {
 public Bow (){
 this.name = "Bow";
-this.assetName = "bow";
+this.assetName = "<:BowMud:593138974759845889>";
 this.attack = 2000;
 this.rarity = 5; 
 this.price =1000;

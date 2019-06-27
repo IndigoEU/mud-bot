@@ -1,5 +1,5 @@
 package com.indigo.mudbot.Weapons;
-public class Torch extends WeaponsTemplate {
+public class Torch extends Weapon {
 public Torch (){
 this.name = "Torch";
 this.assetName = "torch";

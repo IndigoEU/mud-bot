@@ -58,7 +58,7 @@ public class CreateCharacter extends Command {
                     return;
                 }
                 final int updateSlot = slot;
-                int id = Main.getDatabase().getJsonDBTemplate().getCollection(DatabaseCharacter.class).size();
+                int id = Main.getDatabase().getJsonDBTemplate().getCollection(DatabaseCharacter.class).size()+1;
                 Send.SimpleEmbed(event, "What shall be the new character's name?").queue();
                 waiter.waitForEvent(MessageReceivedEvent.class, e -> e.getAuthor().getId().equals(event.getAuthor().getId()), res -> {
                     System.out.println("got past bool");
@@ -67,8 +67,12 @@ public class CreateCharacter extends Command {
                     newChar.setMaxHp(20);
                     newChar.setCurrentHp(20);
                     newChar.setName(res.getMessage().getContentRaw());
-                    newChar.setInventoryId(String.valueOf(Main.getDatabase().getJsonDBTemplate().getCollection(DatabaseCharacterInventory.class).size()));
+                    newChar.setInventoryId(String.valueOf(Main.getDatabase().getJsonDBTemplate().getCollection(DatabaseCharacterInventory.class).size()+1));
+                    DatabaseCharacterInventory newInventory = new DatabaseCharacterInventory();
+                    newInventory.setInventoryId(String.valueOf(Main.getDatabase().getJsonDBTemplate().getCollection(DatabaseCharacterInventory.class).size()+1));
+                    newInventory.setInventory(new int[][]{{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}});
                     Main.getDatabase().getJsonDBTemplate().insert(newChar);
+                    Main.getDatabase().getJsonDBTemplate().insert(newInventory);
                     Update update = new Update();
                     update.set("slot"+updateSlot, String.valueOf(id));
                     String jxQuery = String.format("/.[userId='%s']", event.getAuthor().getId());
