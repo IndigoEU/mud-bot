@@ -3,7 +3,7 @@ public class Dagger extends Weapon {
 public Dagger (){
 this.name = "Dagger";
 this.assetName = "<:DaggerMud:593844729091981314>";
-this.attack = 1;
+this.attack = 10;
 this.rarity = 1;
 this.id = 3;
 this.price = 1;

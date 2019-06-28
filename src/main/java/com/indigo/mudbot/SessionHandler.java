@@ -77,4 +77,8 @@ public class SessionHandler {
     public Map<String, Player> getUserMap(){
         return userMap;
     }
+
+    public Map<String, MessageChannel> getChannelMap() {
+        return channelMap;
+    }
 }
