@@ -8,5 +8,7 @@ public class SmallFungus extends MonsterTemplate {
         this.damage = 10;
         this.rewardXP = 50;
         this.spawnChance = 4;
+        this.speed = 5;
+        this.accuracy = 55;
     }
 }

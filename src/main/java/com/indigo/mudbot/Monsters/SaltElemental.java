@@ -8,5 +8,7 @@ public class SaltElemental extends MonsterTemplate {
         this.damage = 22;
         this.rewardXP = 250;
         this.spawnChance = 1;
+        this.speed = 9;
+        this.accuracy = 65;
     }
 }

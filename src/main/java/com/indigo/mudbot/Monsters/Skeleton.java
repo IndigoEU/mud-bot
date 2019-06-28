@@ -8,5 +8,7 @@ public class Skeleton extends MonsterTemplate {
         this.damage = 8;
         this.rewardXP = 50;
         this.spawnChance = 5;
+        this.speed = 3;
+        this.accuracy = 45;
     }
 }

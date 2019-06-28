@@ -2,7 +2,7 @@ package com.indigo.mudbot.Weapons;
 public class Shovel extends Weapon {
 public Shovel (){
 this.name = "Shovel";
-this.assetName = "shovel";
+this.assetName = "<:ShovelMud:593849441765687296>";
 this.attack = 5;
 this.rarity = 1; 
 this.price = 10;

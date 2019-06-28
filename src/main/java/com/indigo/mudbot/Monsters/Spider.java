@@ -8,5 +8,7 @@ public class Spider extends MonsterTemplate {
         this.damage = 10;
         this.rewardXP = 50;
         this.spawnChance = 5;
+        this.speed = 8;
+        this.accuracy = 50;
     }
 }

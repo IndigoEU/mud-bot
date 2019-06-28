@@ -29,5 +29,8 @@ public class DatabaseCharacter {
     public void setEquipArmor(int equipArmor) { this.equipArmor = equipArmor; }
     public int getEquipWeapon() { return equipWeapon; }
     public void setEquipWeapon(int equipWeapon) { this.equipWeapon = equipWeapon; }
-
+    public int dealDamage(int damage) {
+        this.currentHp -= damage;
+        return this.currentHp;
+    }
 }

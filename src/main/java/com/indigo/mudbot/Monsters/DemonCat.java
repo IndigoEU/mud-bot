@@ -8,5 +8,7 @@ public class DemonCat extends MonsterTemplate {
         this.damage = 20;
         this.rewardXP = 100;
         this.spawnChance = 3;
+        this.speed = 8;
+        this.accuracy = 40;
     }
 }

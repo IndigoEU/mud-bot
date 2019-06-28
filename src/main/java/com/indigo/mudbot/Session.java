@@ -41,6 +41,9 @@ public class Session {
         UpdateSession();
     }
 
+    Player[] getPlayers(){
+        return this.players;
+    }
 
     void UpdateSession() {
         this.moves = "";

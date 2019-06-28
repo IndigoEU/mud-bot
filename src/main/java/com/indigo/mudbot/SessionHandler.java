@@ -16,6 +16,7 @@ public class SessionHandler {
     private static Map<String, String> playerMap = new HashMap<>();
     private static Map<String, Session> sessionMap = new HashMap<>();
     private static Map<String, MessageChannel> channelMap = new HashMap<>();
+    private static Map<String, Player> userMap = new HashMap<>();
     private List<Player> players = new ArrayList<>();
 
     public void createSession(CommandEvent event)
@@ -33,6 +34,7 @@ public class SessionHandler {
         int size = players.size();
         for (int i = 0; i < 4 && i < size; i++){
             playing.add(players.get(0));
+            userMap.put(players.get(0).getId(), players.get(0));
             channels.add(channelMap.get(players.get(0).getId()));
             System.out.println(channelMap.get(players.get(0).getId()));
             players.remove(0);
@@ -70,5 +72,9 @@ public class SessionHandler {
 
     public Session getSession(String id) {
         return sessionMap.get(playerMap.get(id));
+    }
+
+    public Map<String, Player> getUserMap(){
+        return userMap;
     }
 }

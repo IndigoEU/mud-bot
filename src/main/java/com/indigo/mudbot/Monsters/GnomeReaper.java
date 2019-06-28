@@ -8,5 +8,7 @@ public class GnomeReaper extends MonsterTemplate {
         this.damage = 15;
         this.rewardXP = 100;
         this.spawnChance = 3;
+        this.speed = 7;
+        this.accuracy = 40;
     }
 }

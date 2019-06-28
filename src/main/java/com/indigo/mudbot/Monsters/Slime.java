@@ -8,5 +8,7 @@ public class Slime extends MonsterTemplate {
         this.damage = 10;
         this.rewardXP = 70;
         this.spawnChance = 5;
+        this.speed = 2;
+        this.accuracy = 40;
     }
 }
