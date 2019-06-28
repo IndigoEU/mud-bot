@@ -19,6 +19,7 @@ public class CreateCharacter extends Command {
     public CreateCharacter(EventWaiter waiter){
         this.waiter = waiter;
         this.name = "createcharacter";
+        this.name = " let´s you create a character."
         this.category = new Category("MUD");
         this.aliases = new String[]{"create", "createchar", "newchar"};
     }

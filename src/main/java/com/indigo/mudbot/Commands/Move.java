@@ -14,6 +14,7 @@ import java.util.List;
 public class Move extends Command {
     public Move(){
         this.name = "move";
+        this.description = "let´s you move around and explore the dungeon"
         this.guildOnly = false;
     }
 
