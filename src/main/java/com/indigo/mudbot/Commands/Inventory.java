@@ -17,6 +17,7 @@ public class Inventory extends Command {
     private EventWaiter waiter;
     public Inventory(EventWaiter waiter){
         this.name = "inventory";
+        this.description = "let´s you see your characters inventory"
         this.waiter = waiter;
     }
 
