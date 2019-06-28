@@ -9,5 +9,6 @@ this.price = 3000;
 this.accuracy = 90;
 this.description = "A very fancy sword with a handle of actual gold, so you can brag while killing stuff";
 this.speed = 7;
+this.emoteName = "LongSwordMud"
           }
 }

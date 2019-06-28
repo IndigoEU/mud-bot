@@ -9,5 +9,6 @@ this.price = 60;
 this.accuracy = 70;
 this.description = "If you wanna spin to win go for it";
 this.speed = 3;
+this.emoteName = "Flailmud"
           }
 }

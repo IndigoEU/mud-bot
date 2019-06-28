@@ -1,3 +1,4 @@
+# THIS BOT IS STILL WIP
 # Multi-User Dungeon bot for Discord!
 
 You ever wanted to explore a dungeon? Of course you did. Now you have the chance!
@@ -22,6 +23,9 @@ later be exchanged for better weapons in shops scattered across the dungeon.
 <b>/move [direction]</b> - you vote what direction you want to go. Once majority of players vote, the party goes in specified direction. Directions are L (left), R (right), U (up/forward).<br>
 <b>/say [message]</b> - you can join a game with people from other servers, and if you want to communicate with them, use this.<br>
 <hr>
+<h2>Testing the bot</h2>
+<b>https://discord.gg/zeN9dP</b>
 <h2>Installation</h2>
 <i>work in progress</i>
 <hr>
+
