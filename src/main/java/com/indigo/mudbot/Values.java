@@ -61,5 +61,12 @@ public class Values {
 
         Monsters.put(1, new Spider());
         Monsters.put(2, new SaltElemental());
+        Monsters.put(3, new SmallFungus());
+        Monsters.put(4, new Slime());
+        Monsters.put(5, new Skeleton());
+        Monsters.put(6, new ScissorRat());
+        Monsters.put(7, new MutatedFlesh());
+        Monsters.put(8, new GnomeReaper());
+        Monsters.put(9, new DemonCat());
     }
 }

@@ -2,7 +2,7 @@ package com.indigo.mudbot.Monsters;
 
 public class MutatedFlesh extends Monster {
     public MutatedFlesh() {
-        this.name = "Mutated Fllesh";
+        this.name = "Mutated Flesh";
         this.assetName = "flesh";
         this.maxHP = 70;
         this.damage = 15;

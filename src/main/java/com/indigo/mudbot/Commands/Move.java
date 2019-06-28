@@ -21,7 +21,13 @@ public class Move extends Command {
     @Override
     protected void execute(CommandEvent event) {
         Session enter = Main.getSessionHandler().getSession(event.getAuthor().getId());
-        String directions = enter.getDirection();
+        String directions;
+        try {
+            directions = enter.getDirection();
+        } catch(NullPointerException ex){
+            Send.SimpleEmbed(event, "You're not in any session").queue();
+            return;
+        }
         String[] directionArray = directions.split("");
         List<String> direction = new ArrayList<>(Arrays.asList(directionArray));
         System.out.println(direction);

@@ -27,6 +27,7 @@ public class Encounter {
         this.session = session;
         this.random = new Random();
         int randomInt = random.nextInt(101);
+        System.out.println(randomInt);
         if(randomInt > 90){
             EncounterShop();
         }
@@ -42,12 +43,14 @@ public class Encounter {
     }
 
     private void EncounterBoss() {
-
+        session.UpdateSession();
     }
 
     private void EncounterMonster() {
         int selectMonster = random.nextInt(Values.Monsters.size()+1);
+        System.out.println(selectMonster + " < selectmonster");
         Monster monster = Values.Monsters.get(selectMonster);
+        System.out.println(monster + " < monster");
         MonsterEncounterRestart(monster);
 
 
@@ -74,26 +77,27 @@ public class Encounter {
 
     private void MonsterEncounterRestart(Monster monster) {
         ClassLoader classloader = ClassLoader.getSystemClassLoader();
+        System.out.println(monster.getAssetName());
         File file = new File(classloader.getResource("Monsters/"+monster.getAssetName()+".png").getFile());
         MessageBuilder mb = new MessageBuilder();
         EmbedBuilder eb = new EmbedBuilder();
-            eb.setTitle("A monster encounter!");
-            eb.setImage("attachment://"+monster.getAssetName()+".png");
-            eb.setDescription("You encountered a "+monster.getName()+"\n" +
-            "It is a " + monster.name + "\n" +
-            "HP: " + monster.getHp() + "\n");
-            for(int i = 0; i < session.getPlayers().length; i++){
-                eb.addField(session.getPlayers()[i].getName(), "Hp: " + session.getPlayers()[i].character.getCurrentHp(), false);
-            }
+        eb.setTitle("A monster encounter!");
+        eb.setImage("attachment://"+monster.getAssetName()+".png");
+        eb.setDescription("You encountered a "+monster.getName()+"\n" +
+                "It is a " + monster.name + "\n" +
+                "HP: " + monster.getHp() + "\n");
+        for(int i = 0; i < session.getPlayers().length; i++){
+            eb.addField(session.getPlayers()[i].getName(), "Hp: " + session.getPlayers()[i].character.getCurrentHp(), false);
+        }
         mb.setEmbed(eb.build());
         for(MessageChannel channel : channels){
             channel.sendFile(file, monster.getAssetName()+".png", mb.build()).queue(msg -> {
                 if(statusMessages.size() < 4) {
                     statusMessages.add(msg);
                 }
-                msg.addReaction("<:Attack:594085449740320780>").queue();
-                msg.addReaction("<:Items:594083888356392971>").queue();
-                msg.addReaction("<:Escape:594083888628760576>").queue();
+                msg.addReaction("<:Attack:594085449740320780").queue();
+                msg.addReaction("<:Items:594083888356392971").queue();
+                msg.addReaction("<:Escape:594083888628760576").queue();
                 waiter.waitForEvent(MessageReactionAddEvent.class, ev -> ev.getUser().getId().equals(true), res -> {
                     Player player = Main.getSessionHandler().getUserMap().get(res.getUser().getId());
                     if(player == null){
@@ -180,21 +184,19 @@ public class Encounter {
                 result.addReaction(shop.getItem1().getAssetName().replace(">", "")).queue();
                 result.addReaction(shop.getItem2().getAssetName().replace(">", "")).queue();
                 result.addReaction(shop.getItem3().getAssetName().replace(">", "")).queue();
-                result.addReaction("\u274C").queue();
-                waiter.waitForEvent(MessageReactionAddEvent.class, e -> e.getUser().getId().equals(result.getAuthor().getId()), event -> {
+                result.addReaction("\u274C").queue(r -> {waiter.waitForEvent(MessageReactionAddEvent.class, e -> Main.getSessionHandler().getUserMap().containsKey(e.getUser().getId()), event -> {
                     final String chosenReaction = event.getReaction().getReactionEmote().getName();
                     final String item1 = shop.getItem1().getAssetName().replace(">", "");
                     final String item2 = shop.getItem2().getAssetName().replace(">", "");
                     final String item3 = shop.getItem3().getAssetName().replace(">", "");
                     int choice;
-                    if(chosenReaction.equals(item1))choice = 1;
-                    else if(chosenReaction.equals(item2))choice = 2;
-                    else if(chosenReaction.equals(item3))choice = 3;
-                    else if(chosenReaction.equals("\u274c"))choice = 4;
+                    if (chosenReaction.equals(item1)) choice = 1;
+                    else if (chosenReaction.equals(item2)) choice = 2;
+                    else if (chosenReaction.equals(item3)) choice = 3;
+                    else if (chosenReaction.equals("\u274c")) choice = 4;
                     else choice = 4;
-                    switch (choice){
+                    switch (choice) {
                         case 1:
-                            
                             break;
                         case 2:
                             break;
@@ -203,7 +205,8 @@ public class Encounter {
                         case 4:
                             session.UpdateSession();
                             break;
-                    }
+                        }
+                    });
                 });
             });
         }

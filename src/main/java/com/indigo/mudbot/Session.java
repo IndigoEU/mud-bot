@@ -105,6 +105,7 @@ public class Session {
     public void Move(String name, String s){
         SendMessage(name, s);
         moves += s + " ";
+        int amount = players.length;
         int u = 0, d = 0, r = 0, l = 0;
         for(String string : moves.split(" ")){
             switch(string.toLowerCase()) {
@@ -121,7 +122,10 @@ public class Session {
                     l++;
                     break;
             }
-            if(u > players.length/2 || d > players.length/2 || r > players.length/2 || l > players.length/2){
+            System.out.println(u + d + r + l + " with amount of " + amount);
+            if(u > amount/2 || d > amount/2 || r > amount/2 || l > amount/2){
+                System.out.println("MOVING");
+                moves = "";
                 MoveInDirection();
             }
         }
