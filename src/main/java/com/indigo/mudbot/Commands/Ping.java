@@ -6,6 +6,7 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 public class Ping extends Command {
     public Ping(){
         this.name = "ping";
+        this.description = "shows the delay of the bot."
     }
     @Override
     protected void execute(CommandEvent event) {
