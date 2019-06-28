@@ -15,5 +15,6 @@ later be exchanged for better weapons in shops scattered across the dungeon.
 <b>/joingame</b> - you join a queue, looking for the game. When at least 4 players are in the queue, the game starts. <br>
 <b>/iteminfo [item id]</b> - get all info about a specific item<br>
 <b>Once you're in a dungeon:</b><br>
-<b>/move [direction]</b> - you vote what direction you want to go. Once majority of players vote, the party goes in specified direction<br>
-
+<b>/move [direction]</b> - you vote what direction you want to go. Once majority of players vote, the party goes in specified direction. Directions are L (left), R (right), U (up/forward).<br>
+<b>/say [message]</b> - you can join a game with people from other servers, and if you want to communicate with them, use this.<br>
+<hr>
