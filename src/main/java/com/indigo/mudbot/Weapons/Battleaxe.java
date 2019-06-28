@@ -8,6 +8,6 @@ this.rarity = 1;
 this.price = 1;
 this.accuracy = 75;
 this.description = "Heavy and perfect for those that just wanna show off your muscles";
-this.speed = 2;
+this.emoteName = "BattleAxeMud"
           }
 }
