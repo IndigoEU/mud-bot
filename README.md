@@ -1,3 +1,4 @@
+# THIS BOT IS STILL WIP
 # Multi-User Dungeon bot for Discord!
 
 You ever wanted to explore a dungeon? Of course you did. Now you have the chance!
