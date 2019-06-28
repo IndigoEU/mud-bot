@@ -9,5 +9,6 @@ this.price = 1;
 this.accuracy = 100; 
 this.description = "Teenie tiny stabby-stab!";
 this.speed = 15;
+this.emoteName = "DaggerMud"
           }
 }
