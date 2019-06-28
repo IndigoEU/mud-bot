@@ -9,6 +9,7 @@ this.price = 30;
 this.accuracy = 60;
 this.description = "Also stabby-stab, just longer and stronger!";
 this.speed = 8;
-this.emoteName = "SpearMud"
+this.id = 10;
+this.emoteName = "SpearMud";
           }
 }

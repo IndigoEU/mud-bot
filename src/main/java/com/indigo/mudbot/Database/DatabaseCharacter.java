@@ -1,5 +1,6 @@
 package com.indigo.mudbot.Database;
 
+import com.indigo.mudbot.Main;
 import io.jsondb.annotation.Document;
 import io.jsondb.annotation.Id;
 
@@ -50,5 +51,24 @@ public class DatabaseCharacter {
 
     public void setXp(int xp) {
         this.xp = xp;
+    }
+
+    public boolean addItem(int id) {
+        DatabaseCharacterInventory inventory = Main.getDatabase().getJsonDBTemplate().findById(this.inventoryId, DatabaseCharacterInventory.class);
+        int[][] inv = inventory.getInventory();
+        boolean end = false;
+        for(int[] invRow : inv){
+            for(int invSlot : invRow){
+                if(invSlot == 0){
+                    end = true;
+                    invSlot = id;
+                    break;
+                }
+            }
+            if(end) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -18,7 +18,7 @@ public class JoinGame extends Command {
     private EventWaiter waiter;
     public JoinGame(EventWaiter waiter){
         this.name = "joingame";
-        this.description = "starts the game"
+        this.help = "Starts the game";
         this.waiter = waiter;
         this.guildOnly = false;
     }

@@ -8,6 +8,7 @@ public class Item {
     public String name;
     public String assetName;
     public String emoteName;
+    public int id;
 
     public String getName() {
         return name;
@@ -16,4 +17,5 @@ public class Item {
         return assetName;
     }
     public String getEmoteName() { return emoteName; }
+    public int getId() { return id; }
 }

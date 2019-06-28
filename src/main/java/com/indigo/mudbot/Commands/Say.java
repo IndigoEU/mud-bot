@@ -8,7 +8,7 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 public class Say extends Command {
     public Say(){
         this.name = "say";
-        this.description = "send a message to all players"
+        this.help = "send a message to all players";
         this.guildOnly = false;
     }
 

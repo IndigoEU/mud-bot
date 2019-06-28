@@ -9,6 +9,7 @@ this.price = 70;
 this.accuracy = 85;
 this.description = "Sturdy enough to hit your enemies, and can even give a burn. perfect!";
 this.speed = 4;
-this.emoteName = "TorchMud"
+this.id = 11;
+this.emoteName = "TorchMud";
           }
 }

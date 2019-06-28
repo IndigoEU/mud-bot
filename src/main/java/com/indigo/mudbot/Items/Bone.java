@@ -7,6 +7,7 @@ public class Bone extends Item {
         this.rarity = 1;
         this.price = 3;
         this.canDrop = true;
+        this.id = 12;
         this.description = "An old bone with no strip of flesh left.";
     }
 }

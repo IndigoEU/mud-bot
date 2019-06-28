@@ -1,7 +1,6 @@
 package com.indigo.mudbot;
 
 import com.indigo.mudbot.Database.DatabaseCharacterInventory;
-import com.indigo.mudbot.Functions.Send;
 import com.indigo.mudbot.Monsters.Monster;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import net.dv8tion.jda.core.EmbedBuilder;
@@ -55,100 +54,80 @@ public class Encounter {
         Monster monster = Values.Monsters.get(selectMonster);
         System.out.println(monster + " < monster");
         MonsterEncounterRestart(monster);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
-    private void MonsterEncounterRestart(Monster monster) {
-        ClassLoader classloader = ClassLoader.getSystemClassLoader();
-        System.out.println(monster.getAssetName());
-        File file = new File(classloader.getResource("Monsters/"+monster.getAssetName()+".png").getFile());
-        MessageBuilder mb = new MessageBuilder();
-        EmbedBuilder eb = new EmbedBuilder();
-        eb.setTitle("A monster encounter!");
-        eb.setImage("attachment://"+monster.getAssetName()+".png");
-        eb.setDescription("You encountered a "+monster.getName()+"\n" +
-                "HP: " + monster.getHp() + "\n");
-        for(int i = 0; i < session.getPlayers().length; i++){
-            eb.addField(session.getPlayers()[i].getName(), "Hp: " + session.getPlayers()[i].character.getCurrentHp(), false);
+    private void CheckForExistence(){
+        if(statusMessages.size() > 0){
+
         }
-        mb.setEmbed(eb.build());
-        for(MessageChannel channel : channels){
-            channel.sendFile(file, monster.getAssetName()+".png", mb.build()).queue(msg -> {
-                if(statusMessages.size() < 4) {
-                    statusMessages.add(msg);
+    }
+
+
+
+
+
+    private void MonsterEncounterRestart(Monster monster) {
+        if (statusMessages.size() > 0) {
+            for (Message msg : statusMessages) {
+                ClassLoader classloader = ClassLoader.getSystemClassLoader();
+                System.out.println(monster.getAssetName());
+                File file = new File(classloader.getResource("Monsters/" + monster.getAssetName() + ".png").getFile());
+                MessageBuilder mb = new MessageBuilder();
+                EmbedBuilder eb = new EmbedBuilder();
+                eb.setTitle("A monster encounter!");
+                eb.setImage("attachment://" + monster.getAssetName() + ".png");
+                eb.setDescription("You encountered a " + monster.getName() + "\n" +
+                        "HP: " + monster.getHp() + "\n");
+                for (int j = 0; j < session.getPlayers().length; j++) {
+                    eb.addField(session.getPlayers()[j].getName(), "Hp: " + session.getPlayers()[j].character.getCurrentHp(), false);
                 }
-                msg.addReaction("<:Attack:594085449740320780").queue();
-                msg.addReaction("<:Items:594083888356392971").queue();
-                msg.addReaction("<:Escape:594083888628760576").queue();
+                mb.setEmbed(eb.build());
+                msg.editMessage(mb.build()).queue();
+
                 waiter.waitForEvent(MessageReactionAddEvent.class, ev -> Main.getSessionHandler().getUserMap().containsKey(ev.getUser().getId()), res -> {
                     Player player = Main.getSessionHandler().getUserMap().get(res.getUser().getId());
-                    if(player == null){
+                    if (player == null) {
                         res.getChannel().sendMessage(new EmbedBuilder()
                                 .setTitle("You aren't part of this game")
                                 .setColor(0xFF0000).build()).queue();
                         MonsterEncounterRestart(monster);
-                    }
-                    else if(!(Arrays.asList(session.getPlayers()).contains(player))){
+                    } else if (!(Arrays.asList(session.getPlayers()).contains(player))) {
                         res.getChannel().sendMessage(new EmbedBuilder()
                                 .setTitle("You aren't part of this game")
                                 .setColor(0xFF0000).build()).queue();
                         MonsterEncounterRestart(monster);
-                    }
-                    else if(res.getReaction().getReactionEmote().getName().equals("Attack") && player.character.getCurrentHp() > 0) {
-                        if(monster.speed > Values.Weapons.get(player.character.getEquipWeapon()).speed){
+                    } else if (res.getReaction().getReactionEmote().getName().equals("Attack") && player.character.getCurrentHp() > 0) {
+                        if (monster.speed > Values.Weapons.get(player.character.getEquipWeapon()).speed) {
                             int damage = monster.getAttack();
                             player.character.dealDamage(damage);
                             monster.dealDamage(Values.Weapons.get(player.character.getEquipWeapon()).attack);
-                            if(monster.getHp() <= 0) {
+                            if (monster.getHp() <= 0) {
                                 res.getChannel().sendMessage(new EmbedBuilder().setTitle("The monster died!").setColor(0xF0F0F0).build()).queue();
                                 session.UpdateSession();
                             }
                             MonsterEncounterRestart(monster);
-                        }
-                        else {
+                        } else {
                             int damage = monster.getAttack();
                             player.character.dealDamage(damage);
                             monster.dealDamage(Values.Weapons.get(player.character.getEquipWeapon()).attack);
                             MonsterEncounterRestart(monster);
                         }
-                    }
-                    else if(res.getReaction().getReactionEmote().getName().equals("Items") && player.character.getCurrentHp() > 0){
+                    } else if (res.getReaction().getReactionEmote().getName().equals("Items") && player.character.getCurrentHp() > 0) {
                         StringBuilder sb = new StringBuilder();
                         int[][] invSlots = Main.getDatabase().getJsonDBTemplate().findById(player.character.getInventoryId(), DatabaseCharacterInventory.class).getInventory();
-                            for(int[] inventoryRow : invSlots){
-                                for(int inventorySlot : inventoryRow){
-                                    if(inventorySlot == 0){
-                                        sb.append(Values.NO_ITEM);
-                                    }
-                                    else {
-                                        sb.append(Values.Items.get(inventorySlot).getAssetName());
-                                    }
+                        for (int[] inventoryRow : invSlots) {
+                            for (int inventorySlot : inventoryRow) {
+                                if (inventorySlot == 0) {
+                                    sb.append(Values.NO_ITEM);
+                                } else {
+                                    sb.append(Values.Items.get(inventorySlot).getAssetName());
                                 }
-                                sb.append("\n");
                             }
-                        channel.sendMessage(new EmbedBuilder()
-                            .setTitle("Select an item to use")
-                            .setDescription(sb.toString()).build()).queue();
+                            sb.append("\n");
+                        }
+                        msg.editMessage(new EmbedBuilder()
+                                .setTitle("Select an item to use")
+                                .setDescription(sb.toString()).build()).queue();
                         waiter.waitForEvent(MessageReceivedEvent.class, e -> Main.getSessionHandler().getUserMap().containsKey(e.getAuthor().getId()), e -> {
                             String[] array = e.getMessage().getContentRaw().split(":");
                             int[] numArray = new int[2];
@@ -157,46 +136,181 @@ public class Encounter {
                                 numArray[0] = Integer.parseInt(array[0]);
                                 numArray[1] = Integer.parseInt(array[1]);
                                 selectItem = invSlots[numArray[0] - 1][numArray[1] - 1];
-                            }
-                            catch(Exception ex){
+                            } catch (Exception ex) {
                                 e.getChannel().sendMessage(new EmbedBuilder()
-                                    .setTitle("Invalid item selected")
-                                    .setColor(0xFF0000).build()).queue();
+                                        .setTitle("Invalid item selected")
+                                        .setColor(0xFF0000).build()).queue();
                                 return;
                             }
-                            if(!Values.Usable.containsKey())
-                            });
-                    }
-                    else if(res.getReaction().getReactionEmote().getName().equals("Escape") && player.character.getCurrentHP() > 0){
+                            if (!Values.Usable.containsKey(selectItem)) {
+                                e.getChannel().sendMessage(new EmbedBuilder()
+                                        .setTitle("This item cannot be used")
+                                        .setColor(0x00FF00).build()).queue();
+                            } else {
+                                player.character.setCurrentHp(player.character.getCurrentHp() + 50);
+                            }
+                        });
+                    } else if (res.getReaction().getReactionEmote().getName().equals("Escape") && player.character.getCurrentHp() > 0) {
                         Random rnd = new Random();
                         int chance = rnd.nextInt(10);
                         EmbedBuilder embed = new EmbedBuilder();
                         float d = Values.Weapons.get(player.character.getEquipWeapon()).speed;
                         chance += d;
-                        if(chance > monster.speed) {
+                        if (chance > monster.speed) {
                             embed.setTitle("You've managed to escape!")
                                     .setColor(0x00FF00);
                             session.UpdateSession();
-                        }
-                        else {
+                        } else {
                             embed.setTitle("You've failed to escape! Monster used that chance and attacked you!")
                                     .setColor(0xFF0000);
                             int damage = monster.attack();
                             player.character.dealDamage(damage);
                             MonsterEncounterRestart(monster);
                         }
-                        for(MessageChannel channelRun : channels){
+                        for (MessageChannel channelRun : channels) {
+                            channelRun.sendMessage(embed.build()).queue();
+                            int attack = monster.attack();
+                            player.character.dealDamage(attack);
+                            session.UpdateSession();
+                        }
+                    } else {
+                        boolean alive = false;
+                        for (Player playerChar : session.getPlayers()) {
+                            if (!(playerChar.character.getCurrentHp() <= 0)) alive = true;
+                        }
+                        if (alive) MonsterEncounterRestart(monster);
+                        else {
+                            msg.editMessage("GAME OVER").queue();
+                            session.UpdateSession();
+                        }
+                    }
+                });
+            }
+        } else {
+            ClassLoader classloader = ClassLoader.getSystemClassLoader();
+            System.out.println(monster.getAssetName());
+            File file = new File(classloader.getResource("Monsters/" + monster.getAssetName() + ".png").getFile());
+            MessageBuilder mb = new MessageBuilder();
+            EmbedBuilder eb = new EmbedBuilder();
+            eb.setTitle("A monster encounter!");
+            eb.setImage("attachment://" + monster.getAssetName() + ".png");
+            eb.setDescription("You encountered a " + monster.getName() + "\n" +
+                    "HP: " + monster.getHp() + "\n");
+            for (int i = 0; i < session.getPlayers().length; i++) {
+                eb.addField(session.getPlayers()[i].getName(), "Hp: " + session.getPlayers()[i].character.getCurrentHp(), false);
+            }
+            mb.setEmbed(eb.build());
+            for (MessageChannel channel : channels) {
+                channel.sendFile(file, monster.getAssetName() + ".png", mb.build()).queue(msg -> {
+                    if (statusMessages.size() < 4) {
+                        statusMessages.add(msg);
+                    }
+                    msg.addReaction("<:Attack:594085449740320780").queue();
+                    msg.addReaction("<:Items:594083888356392971").queue();
+                    msg.addReaction("<:Escape:594083888628760576").queue();
+                    waiter.waitForEvent(MessageReactionAddEvent.class, ev -> Main.getSessionHandler().getUserMap().containsKey(ev.getUser().getId()), res -> {
+                        Player player = Main.getSessionHandler().getUserMap().get(res.getUser().getId());
+                        if (player == null) {
+                            res.getChannel().sendMessage(new EmbedBuilder()
+                                    .setTitle("You aren't part of this game")
+                                    .setColor(0xFF0000).build()).queue();
+                            MonsterEncounterRestart(monster);
+                        } else if (!(Arrays.asList(session.getPlayers()).contains(player))) {
+                            res.getChannel().sendMessage(new EmbedBuilder()
+                                    .setTitle("You aren't part of this game")
+                                    .setColor(0xFF0000).build()).queue();
+                            MonsterEncounterRestart(monster);
+                        } else if (res.getReaction().getReactionEmote().getName().equals("Attack") && player.character.getCurrentHp() > 0) {
+                            if (monster.speed > Values.Weapons.get(player.character.getEquipWeapon()).speed) {
+                                int damage = monster.getAttack();
+                                player.character.dealDamage(damage);
+                                monster.dealDamage(Values.Weapons.get(player.character.getEquipWeapon()).attack);
+                                if (monster.getHp() <= 0) {
+                                    res.getChannel().sendMessage(new EmbedBuilder().setTitle("The monster died!").setColor(0xF0F0F0).build()).queue();
+                                    session.UpdateSession();
+                                }
+                                MonsterEncounterRestart(monster);
+                            } else {
+                                int damage = monster.getAttack();
+                                player.character.dealDamage(damage);
+                                monster.dealDamage(Values.Weapons.get(player.character.getEquipWeapon()).attack);
+                                MonsterEncounterRestart(monster);
+                            }
+                        } else if (res.getReaction().getReactionEmote().getName().equals("Items") && player.character.getCurrentHp() > 0) {
+                            StringBuilder sb = new StringBuilder();
+                            int[][] invSlots = Main.getDatabase().getJsonDBTemplate().findById(player.character.getInventoryId(), DatabaseCharacterInventory.class).getInventory();
+                            for (int[] inventoryRow : invSlots) {
+                                for (int inventorySlot : inventoryRow) {
+                                    if (inventorySlot == 0) {
+                                        sb.append(Values.NO_ITEM);
+                                    } else {
+                                        sb.append(Values.Items.get(inventorySlot).getAssetName());
+                                    }
+                                }
+                                sb.append("\n");
+                            }
+                            channel.sendMessage(new EmbedBuilder()
+                                    .setTitle("Select an item to use")
+                                    .setDescription(sb.toString()).build()).queue();
+                            waiter.waitForEvent(MessageReceivedEvent.class, e -> Main.getSessionHandler().getUserMap().containsKey(e.getAuthor().getId()), e -> {
+                                String[] array = e.getMessage().getContentRaw().split(":");
+                                int[] numArray = new int[2];
+                                int selectItem;
+                                try {
+                                    numArray[0] = Integer.parseInt(array[0]);
+                                    numArray[1] = Integer.parseInt(array[1]);
+                                    selectItem = invSlots[numArray[0] - 1][numArray[1] - 1];
+                                } catch (Exception ex) {
+                                    e.getChannel().sendMessage(new EmbedBuilder()
+                                            .setTitle("Invalid item selected")
+                                            .setColor(0xFF0000).build()).queue();
+                                    return;
+                                }
+                                if (!Values.Usable.containsKey(selectItem)) {
+                                    e.getChannel().sendMessage(new EmbedBuilder()
+                                            .setTitle("This item cannot be used")
+                                            .setColor(0x00FF00).build()).queue();
+                                } else {
+                                    player.character.setCurrentHp(player.character.getCurrentHp() + 50);
+                                }
+                            });
+                        } else if (res.getReaction().getReactionEmote().getName().equals("Escape") && player.character.getCurrentHp() > 0) {
+                            Random rnd = new Random();
+                            int chance = rnd.nextInt(10);
+                            EmbedBuilder embed = new EmbedBuilder();
+                            float d = Values.Weapons.get(player.character.getEquipWeapon()).speed;
+                            chance += d;
+                            if (chance > monster.speed) {
+                                embed.setTitle("You've managed to escape!")
+                                        .setColor(0x00FF00);
+                                session.UpdateSession();
+                            } else {
+                                embed.setTitle("You've failed to escape! Monster used that chance and attacked you!")
+                                        .setColor(0xFF0000);
+                                int damage = monster.attack();
+                                player.character.dealDamage(damage);
+                                MonsterEncounterRestart(monster);
+                            }
+                            for (MessageChannel channelRun : channels) {
                                 channelRun.sendMessage(embed.build()).queue();
                                 int attack = monster.attack();
                                 player.character.dealDamage(attack);
                                 session.UpdateSession();
+                            }
+                        } else {
+                            boolean alive = false;
+                            for (Player playerChar : session.getPlayers()) {
+                                if (!(playerChar.character.getCurrentHp() <= 0)) alive = true;
+                            }
+                            if (alive) MonsterEncounterRestart(monster);
+                            else {
+                                channel.sendMessage("GAME OVER").queue();
+                                session.UpdateSession();
+                            }
                         }
-                    }
-                    else{
-                        MonsterEncounterRestart(monster);
-                    }
+                    });
                 });
-            });
+            }
         }
     }
 
@@ -224,7 +338,8 @@ public class Encounter {
                 result.addReaction(shop.getItem1().getAssetName().replace(">", "")).queue();
                 result.addReaction(shop.getItem2().getAssetName().replace(">", "")).queue();
                 result.addReaction(shop.getItem3().getAssetName().replace(">", "")).queue();
-                result.addReaction("\u274C").queue(r -> waiter.waitForEvent(MessageReactionAddEvent.class, e -> Main.getSessionHandler().getUserMap().containsKey(e.getUser().getId()), event -> {
+                result.addReaction("\u274C").queue();
+            waiter.waitForEvent(MessageReactionAddEvent.class, e -> Main.getSessionHandler().getUserMap().containsKey(e.getUser().getId()), event -> {
                     final String chosenReaction = event.getReaction().getReactionEmote().getName();
                     int choice;
                     if (chosenReaction.equals(shop.getItem1().getEmoteName())) choice = 1;
@@ -258,18 +373,21 @@ public class Encounter {
                             }
                             break;
                         case 3:
-                            if(currentMoney < shop.getItem3().price){
+                            if(currentMoney > shop.getItem3().price){
                                 EmbedBuilder eb = new EmbedBuilder()
                                         .setTitle("You can't afford that.")
                                         .setColor(0xFF0000);
                                 event.getChannel().sendMessage(eb.build()).queue();
+                            }
+                            else {
+                                player.character.addItem(shop.getItem3().id);
                             }
                             break;
                         case 4:
                             session.UpdateSession();
                             break;
                         }
-                    }));
+                    });
             });
         }
 

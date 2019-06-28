@@ -44,10 +44,11 @@ public class Values {
         Items.put(7, new Rapier());
         Items.put(8, new Scythe());
         Items.put(9, new Shovel());
-        Items.put(10, new Torch());
-        Items.put(11, new Bone());
-        Items.put(12, new HealingPotion());
-        Items.put(13, new Slimeball());
+        Items.put(10, new Spear());
+        Items.put(11, new Torch());
+        Items.put(12, new Bone());
+        Items.put(13, new HealingPotion());
+        Items.put(14, new Slimeball());
 
         Weapons.put(1, new Battleaxe());
         Weapons.put(2, new Bow());
@@ -58,7 +59,8 @@ public class Values {
         Weapons.put(7, new Rapier());
         Weapons.put(8, new Scythe());
         Weapons.put(9, new Shovel());
-        Weapons.put(10, new Torch());
+        Weapons.put(10, new Spear());
+        Weapons.put(11, new Torch());
 
         Shops.put(1, new Shop(new Dagger(), new Torch(), new Shovel()));
 

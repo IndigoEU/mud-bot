@@ -19,7 +19,7 @@ public class CreateCharacter extends Command {
     public CreateCharacter(EventWaiter waiter){
         this.waiter = waiter;
         this.name = "createcharacter";
-        this.name = " let´s you create a character."
+        this.help = "Let's you create a character.";
         this.category = new Category("MUD");
         this.aliases = new String[]{"create", "createchar", "newchar"};
     }
@@ -65,8 +65,9 @@ public class CreateCharacter extends Command {
                     System.out.println("got past bool");
                     DatabaseCharacter newChar = new DatabaseCharacter();
                     newChar.setCharacterId(String.valueOf(id));
-                    newChar.setMaxHp(20);
-                    newChar.setCurrentHp(20);
+                    newChar.setMaxHp(100);
+                    newChar.setCurrentHp(100);
+                    newChar.setEquipWeapon(3);
                     newChar.setName(res.getMessage().getContentRaw());
                     newChar.setInventoryId(String.valueOf(Main.getDatabase().getJsonDBTemplate().getCollection(DatabaseCharacterInventory.class).size()+1));
                     DatabaseCharacterInventory newInventory = new DatabaseCharacterInventory();
