@@ -14,6 +14,10 @@ later be exchanged for better weapons in shops scattered across the dungeon.
 <b>/createcharacter</b> - you can have up to 4 characters<br>
 <b>/joingame</b> - you join a queue, looking for the game. When at least 4 players are in the queue, the game starts. <br>
 <b>/iteminfo [item id]</b> - get all info about a specific item<br>
+<b>/owo</b> - (yes, we have this.) Embrace the weebness and owoify all messages from the bot.<br>
+<b>/inventory</b> - get a look at your character's inventory<br>
+<b>/equip</b> - equip a weapon from your inventory<br>
+<b>/ping</b> - pong<br>
 <b>Once you're in a dungeon:</b><br>
 <b>/move [direction]</b> - you vote what direction you want to go. Once majority of players vote, the party goes in specified direction. Directions are L (left), R (right), U (up/forward).<br>
 <b>/say [message]</b> - you can join a game with people from other servers, and if you want to communicate with them, use this.<br>
