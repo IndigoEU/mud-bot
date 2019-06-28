@@ -5,6 +5,7 @@ public class MutatedFlesh extends Monster {
         this.name = "Mutated Flesh";
         this.assetName = "flesh";
         this.maxHP = 70;
+        this.currentHP = 70;
         this.damage = 15;
         this.rewardXP = 75;
         this.spawnChance = 4;

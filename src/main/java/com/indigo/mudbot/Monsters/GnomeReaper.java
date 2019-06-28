@@ -5,6 +5,7 @@ public class GnomeReaper extends Monster {
         this.name = "Gnome Reaper";
         this.assetName = "gnomereaper";
         this.maxHP = 100;
+        this.currentHP = 100;
         this.damage = 15;
         this.rewardXP = 100;
         this.spawnChance = 3;

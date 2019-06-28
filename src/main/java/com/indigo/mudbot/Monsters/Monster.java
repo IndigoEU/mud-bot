@@ -6,7 +6,7 @@ public class Monster {
     public String name;
     public String assetName;
     public int maxHP;
-    private int currentHP;
+    public int currentHP;
     public int rewardXP;
     public int damage;
     public int spawnChance; // 1 through 5 (5 - most likely to spawn)
@@ -18,7 +18,6 @@ public class Monster {
     public String getName(){ return this.name; }
 
     public int getHp(){
-        if(this.currentHP == 0) this.currentHP = this.maxHP;
         return this.currentHP;
     }
 

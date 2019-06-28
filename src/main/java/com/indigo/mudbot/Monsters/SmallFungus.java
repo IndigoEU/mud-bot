@@ -5,6 +5,7 @@ public class SmallFungus extends Monster {
         this.name = "Small Fungus";
         this.assetName = "fungus";
         this.maxHP = 40;
+        this.currentHP = 40;
         this.damage = 10;
         this.rewardXP = 50;
         this.spawnChance = 4;

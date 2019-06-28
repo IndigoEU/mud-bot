@@ -5,6 +5,7 @@ public class DemonCat extends Monster {
         this.name = "Demon Cat";
         this.assetName = "demoncat";
         this.maxHP = 100;
+        this.currentHP = 100;
         this.damage = 20;
         this.rewardXP = 100;
         this.spawnChance = 3;

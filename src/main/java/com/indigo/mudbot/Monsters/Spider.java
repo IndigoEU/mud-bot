@@ -5,6 +5,7 @@ public class Spider extends Monster {
         this.name = "Spider";
         this.assetName = "spider";
         this.maxHP = 25;
+        this.currentHP = 25;
         this.damage = 10;
         this.rewardXP = 50;
         this.spawnChance = 5;

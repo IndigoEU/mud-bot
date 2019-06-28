@@ -5,6 +5,7 @@ public class Slime extends Monster {
         this.name = "Slime";
         this.assetName = "slime";
         this.maxHP = 50;
+        this.currentHP = 50;
         this.damage = 10;
         this.rewardXP = 70;
         this.spawnChance = 5;

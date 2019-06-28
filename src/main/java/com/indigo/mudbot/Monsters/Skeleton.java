@@ -5,6 +5,7 @@ public class Skeleton extends Monster {
         this.name = "Skeleton";
         this.assetName = "skeleton";
         this.maxHP = 40;
+        this.currentHP = 40;
         this.damage = 8;
         this.rewardXP = 50;
         this.spawnChance = 5;
