@@ -22,7 +22,8 @@ public class Values {
             new Say(),
             new Inventory(Main.waiter),
             new Equip(Main.waiter),
-            new Move()
+            new Move(),
+            new Iteminfo()
     };
     public static Class[] playerClasses = new Class[]{
             new Fighter()

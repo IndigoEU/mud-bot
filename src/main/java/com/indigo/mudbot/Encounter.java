@@ -114,11 +114,15 @@ public class Encounter {
                                 .setColor(0xFF0000).build()).queue();
                         MonsterEncounterRestart(monster);
                     }
-                    else if(res.getReaction().getReactionEmote().getName().equals("Attack")) {
+                    else if(res.getReaction().getReactionEmote().getName().equals("Attack") && player.character.getCurrentHp() > 0) {
                         if(monster.speed > Values.Weapons.get(player.character.getEquipWeapon()).speed){
                             int damage = monster.getAttack();
                             player.character.dealDamage(damage);
                             monster.dealDamage(Values.Weapons.get(player.character.getEquipWeapon()).attack);
+                            if(monster.getHp() <= 0) {
+                                res.getChannel().sendMessage(new EmbedBuilder().setTitle("The monster died!").setColor(0xF0F0F0).build()).queue();
+                                session.UpdateSession();
+                            }
                             MonsterEncounterRestart(monster);
                         }
                         else {
@@ -128,7 +132,7 @@ public class Encounter {
                             MonsterEncounterRestart(monster);
                         }
                     }
-                    else if(res.getReaction().getReactionEmote().getName().equals("Items")){
+                    else if(res.getReaction().getReactionEmote().getName().equals("Items") && player.character.getCurrentHp() > 0){
                         StringBuilder sb = new StringBuilder();
                         int[][] invSlots = Main.getDatabase().getJsonDBTemplate().findById(player.character.getInventoryId(), DatabaseCharacterInventory.class).getInventory();
                             for(int[] inventoryRow : invSlots){
@@ -163,17 +167,23 @@ public class Encounter {
                             if(!Values.Usable.containsKey())
                             });
                     }
-                    else if(res.getReaction().getReactionEmote().getName().equals("Escape")){
+                    else if(res.getReaction().getReactionEmote().getName().equals("Escape") && player.character.getCurrentHP() > 0){
                         Random rnd = new Random();
-                        int chance = rnd.nextInt(100);
+                        int chance = rnd.nextInt(10);
                         EmbedBuilder embed = new EmbedBuilder();
-                        if(chance > 75) {
+                        float d = Values.Weapons.get(player.character.getEquipWeapon()).speed;
+                        chance += d;
+                        if(chance > monster.speed) {
                             embed.setTitle("You've managed to escape!")
                                     .setColor(0x00FF00);
+                            session.UpdateSession();
                         }
                         else {
-                            embed.setTitle("You've failed to escape!")
+                            embed.setTitle("You've failed to escape! Monster used that chance and attacked you!")
                                     .setColor(0xFF0000);
+                            int damage = monster.attack();
+                            player.character.dealDamage(damage);
+                            MonsterEncounterRestart(monster);
                         }
                         for(MessageChannel channelRun : channels){
                                 channelRun.sendMessage(embed.build()).queue();
