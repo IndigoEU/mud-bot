@@ -1,17 +1,12 @@
 package com.indigo.mudbot;
 
+import com.indigo.mudbot.Classes.*;
 import com.indigo.mudbot.Classes.Class;
-import com.indigo.mudbot.Classes.Fighter;
 import com.indigo.mudbot.Commands.*;
-import com.indigo.mudbot.Items.Bone;
-import com.indigo.mudbot.Items.HealingPotion;
-import com.indigo.mudbot.Items.Item;
-import com.indigo.mudbot.Items.Slimeball;
-import com.indigo.mudbot.Monsters.MonsterTemplate;
-import com.indigo.mudbot.Monsters.Spider;
+import com.indigo.mudbot.Items.*;
+import com.indigo.mudbot.Monsters.*;
 import com.indigo.mudbot.Weapons.*;
 import com.jagrosh.jdautilities.command.Command;
-import javafx.beans.binding.SetExpression;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +29,7 @@ public class Values {
     public static Map<Integer, Item> Items = new HashMap<>();
     public static Map<Integer, Weapon> Weapons = new HashMap<>();
     public static Map<Integer, Shop> Shops = new HashMap<>();
-    public static Map<Integer, MonsterTemplate> Monsters = new HashMap<>();
+    public static Map<Integer, Monster> Monsters = new HashMap<>();
 
     static{
         Items.put(1, new Battleaxe());
@@ -65,7 +60,6 @@ public class Values {
         Shops.put(1, new Shop(new Dagger(), new Torch(), new Shovel()));
 
         Monsters.put(1, new Spider());
-
-        
+        Monsters.put(2, new SaltElemental());
     }
 }

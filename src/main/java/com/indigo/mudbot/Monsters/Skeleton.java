@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Monsters;
 
-public class Skeleton extends MonsterTemplate {
+public class Skeleton extends Monster {
     public Skeleton() {
         this.name = "Skeleton";
         this.assetName = "skeleton";

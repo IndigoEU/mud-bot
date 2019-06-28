@@ -1,41 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09337c9b-5dd4-4fc6-b8ed-29001ca7ff61" name="Default Changelist" comment="Did a lot of updates on the session handler, added basic encounter logic.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/Monsters/spider.png" afterDir="false" />
+    <list default="true" id="09337c9b-5dd4-4fc6-b8ed-29001ca7ff61" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Monster.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Classes/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Classes/Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Database/DatabaseCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Database/DatabaseCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Items/Bone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Items/Bone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Items/HealingPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Items/HealingPotion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Items/Slimeball.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Items/Slimeball.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/DemonCat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/DemonCat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/GnomeReaper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/GnomeReaper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MonsterTemplate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MonsterTemplate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MonsterTemplate.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MutatedFlesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MutatedFlesh.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/SaltElemental.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/SaltElemental.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/ScrissorRat.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Skeleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Slime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Slime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/SmallFungus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/SmallFungus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Spider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/SessionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/SessionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Values.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Values.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Battleaxe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Battleaxe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Bow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Bow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Dagger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Dagger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Flail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Flail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Hammer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Hammer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Longsword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Longsword.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Rapier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Rapier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Scythe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Scythe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/ShortSword.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Shovel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Shovel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Spear.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Spear.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Torch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Torch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Weapon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Weapon.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -84,97 +64,116 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="136" column="78" lean-forward="true" selection-start-line="136" selection-start-column="78" selection-end-line="136" selection-end-column="78" />
+            <state relative-caret-position="319">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6058#6059#0" expanded="true" />
+                <element signature="e#5996#5997#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Player.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Session.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            <state relative-caret-position="247">
+              <caret line="136" selection-start-line="136" selection-end-line="136" />
               <folding>
-                <element signature="e#302#303#0" expanded="true" />
-                <element signature="e#332#333#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Database/DatabaseCharacter.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/Move.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MonsterTemplate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+            <state relative-caret-position="247">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
               <folding>
-                <element signature="e#752#753#0" expanded="true" />
-                <element signature="e#786#787#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Longsword.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jagrosh/jda-utilities-command/2.1.5/da4dd127d021dcd190f3784280d949a04156631/jda-utilities-command-2.1.5-sources.jar!/com/jagrosh/jdautilities/command/Command.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+            <state relative-caret-position="247">
+              <caret line="332" selection-start-line="332" selection-end-line="332" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Values.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/hooks/InterfacedEventManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="68" column="8" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+            <state relative-caret-position="151">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Spider.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/entities/impl/UserImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+            <state relative-caret-position="285">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
+              <folding>
+                <element signature="e#1753#1754#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/Monsters/spider.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Weapon.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/JoinGame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+            <state relative-caret-position="111">
+              <caret line="73" selection-start-line="73" selection-end-line="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Rapier.java">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jagrosh/jda-utilities-command/2.1.5/da4dd127d021dcd190f3784280d949a04156631/jda-utilities-command-2.1.5-sources.jar!/com/jagrosh/jdautilities/command/CommandEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="1" column="32" selection-start-line="1" selection-start-column="32" selection-end-line="1" selection-end-column="32" />
+            <state relative-caret-position="103">
+              <caret line="1069" selection-start-line="1069" selection-end-line="1069" />
+              <folding>
+                <element signature="e#3410#3411#0" expanded="true" />
+                <element signature="e#3437#3438#0" expanded="true" />
+                <element signature="e#44801#44802#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/events/message/MessageReceivedEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
+              <folding>
+                <element signature="e#2246#2247#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/entities/impl/ReceivedMessage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="111">
+              <caret line="447" selection-start-line="447" selection-end-line="447" />
+              <folding>
+                <element signature="e#14603#14604#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -202,8 +201,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Database.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/DatabaseUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Functions/Alternator.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Status.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Main.java" />
@@ -221,7 +218,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Items/ItemTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/Say.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/DungeonMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Classes/Class.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/CreateCharacter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Functions/DatabaseInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/Move.java" />
@@ -248,11 +244,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/SessionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/DemonCat.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Weapons/Weapon.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MonsterTemplate.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Database/DatabaseCharacter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Classes/Class.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MonsterTemplate.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Monster.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/ScissorRat.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Values.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java" />
       </list>
     </option>
   </component>
@@ -314,60 +313,6 @@
               <item name="mudbot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mudbot" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mudbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mudbot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mudbot" type="462c0819:PsiDirectoryNode" />
-              <item name="Commands" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mudbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mudbot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mudbot" type="462c0819:PsiDirectoryNode" />
-              <item name="Database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mudbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mudbot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mudbot" type="462c0819:PsiDirectoryNode" />
-              <item name="Functions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mudbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mudbot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mudbot" type="462c0819:PsiDirectoryNode" />
-              <item name="Items" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mudbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mudbot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="mudbot" type="462c0819:PsiDirectoryNode" />
-              <item name="Weapons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mudbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mudbot" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -384,7 +329,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="Monsters" type="462c0819:PsiDirectoryNode" />
+              <item name="Shops" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -455,7 +400,7 @@
       <workItem from="1561583239121" duration="395000" />
       <workItem from="1561583799437" duration="295000" />
       <workItem from="1561623316788" duration="35608000" />
-      <workItem from="1561708210027" duration="7423000" />
+      <workItem from="1561708210027" duration="11225000" />
     </task>
     <task id="LOCAL-00001" summary="Added alternator and improved database">
       <created>1561465484872</created>
@@ -499,11 +444,18 @@
       <option name="project" value="LOCAL" />
       <updated>1561655854639</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Did a lot of updates on the session handler, added basic encounter logic.">
+      <created>1561716645246</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1561716645246</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="109218000" />
+    <option name="totallyTimeSpent" value="113020000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,7 +468,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="776" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29449838" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -528,7 +479,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32847896" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49838188" weight="0.41262135" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39967638" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39967638" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32847896" />
@@ -538,7 +489,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.18446602" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Messages" order="13" visible="true" weight="0.32847896" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32847896" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -611,75 +562,24 @@
           <properties />
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Session.java</url>
+          <line>129</line>
+          <properties class="com.indigo.mudbot.Session" method="MoveInDirection">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/SaltElemental.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/ScrissorRat.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Skeleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Slime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/SmallFungus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14832">
-          <caret line="656" column="18" selection-start-line="656" selection-start-column="18" selection-end-line="656" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/entities/impl/UserImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-          <folding>
-            <element signature="e#1753#1754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jagrosh/jda-utilities-command/2.1.5/da4dd127d021dcd190f3784280d949a04156631/jda-utilities-command-2.1.5-sources.jar!/com/jagrosh/jdautilities/command/CommandEvent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1368">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-          <folding>
-            <element signature="e#3437#3438#0" expanded="true" />
-            <element signature="e#44761#44762#0" expanded="true" />
-            <element signature="e#44801#44802#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jagrosh/jda-utilities-command/2.1.5/da4dd127d021dcd190f3784280d949a04156631/jda-utilities-command-2.1.5-sources.jar!/com/jagrosh/jdautilities/command/Command.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7200">
-          <caret line="321" column="8" selection-start-line="321" selection-start-column="8" selection-end-line="321" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/Say.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -687,20 +587,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/hooks/InterfacedEventManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="85" selection-start-line="85" selection-end-line="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Classes/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="51" lean-forward="true" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -769,26 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/JoinGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/Move.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -808,20 +674,6 @@
             <element signature="e#429#430#0" expanded="true" />
             <element signature="e#457#458#0" expanded="true" />
             <element signature="e#494#495#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Session.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1308#1309#0" expanded="true" />
-            <element signature="e#1342#1343#0" expanded="true" />
-            <element signature="e#3861#3862#0" expanded="true" />
-            <element signature="e#3904#3905#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -963,17 +815,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/MonsterTemplate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
-          <folding>
-            <element signature="e#752#753#0" expanded="true" />
-            <element signature="e#786#787#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -992,17 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="136" column="78" lean-forward="true" selection-start-line="136" selection-start-column="78" selection-end-line="136" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6058#6059#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Monsters/spider.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -1013,10 +843,159 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Classes/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/Monster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-211">
+          <caret line="12" column="99" lean-forward="true" selection-start-line="12" selection-start-column="99" selection-end-line="12" selection-end-column="100" />
+          <folding>
+            <element signature="e#752#753#0" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Monsters/ScissorRat.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jagrosh/jda-utilities-command/2.1.5/da4dd127d021dcd190f3784280d949a04156631/jda-utilities-command-2.1.5-sources.jar!/com/jagrosh/jdautilities/command/impl/CommandClientImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="441" selection-start-line="441" selection-end-line="441" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/entities/MessageEmbed.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="921" selection-start-line="921" selection-end-line="921" />
+          <folding>
+            <element signature="e#30804#30805#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/EmbedBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="719" selection-start-line="719" selection-end-line="719" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Values.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="68" column="8" lean-forward="true" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+        <state relative-caret-position="94">
+          <caret line="62" column="45" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/entities/impl/ReceivedMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="447" selection-start-line="447" selection-end-line="447" />
+          <folding>
+            <element signature="e#14603#14604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/events/message/MessageReceivedEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
+          <folding>
+            <element signature="e#2246#2247#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/entities/impl/UserImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+          <folding>
+            <element signature="e#1753#1754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/JoinGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jagrosh/jda-utilities-command/2.1.5/da4dd127d021dcd190f3784280d949a04156631/jda-utilities-command-2.1.5-sources.jar!/com/jagrosh/jdautilities/command/CommandEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="1069" selection-start-line="1069" selection-end-line="1069" />
+          <folding>
+            <element signature="e#3410#3411#0" expanded="true" />
+            <element signature="e#3437#3438#0" expanded="true" />
+            <element signature="e#44801#44802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Encounter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5996#5997#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/indigo/mudbot/Commands/Move.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.jagrosh/jda-utilities-command/2.1.5/da4dd127d021dcd190f3784280d949a04156631/jda-utilities-command-2.1.5-sources.jar!/com/jagrosh/jdautilities/command/Command.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="332" selection-start-line="332" selection-end-line="332" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.dv8tion/JDA/3.8.3_463/dad695c2432318a5bfdeaa884361772256a0899/JDA-3.8.3_463-sources.jar!/net/dv8tion/jda/core/hooks/InterfacedEventManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
         </state>
       </provider>
     </entry>

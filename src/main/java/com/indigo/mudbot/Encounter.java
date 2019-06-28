@@ -1,7 +1,6 @@
 package com.indigo.mudbot;
 
-import com.indigo.mudbot.Functions.Send;
-import com.indigo.mudbot.Monsters.MonsterTemplate;
+import com.indigo.mudbot.Monsters.Monster;
 import com.jagrosh.jdautilities.commons.waiter.EventWaiter;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.MessageBuilder;
@@ -43,11 +42,12 @@ public class Encounter {
     }
 
     private void EncounterBoss() {
+
     }
 
     private void EncounterMonster() {
-        int selectMonster = random.nextInt(Values.Monsters.size());
-        MonsterTemplate monster = Values.Monsters.get(selectMonster);
+        int selectMonster = random.nextInt(Values.Monsters.size()+1);
+        Monster monster = Values.Monsters.get(selectMonster);
         MonsterEncounterRestart(monster);
 
 
@@ -72,7 +72,7 @@ public class Encounter {
 
     }
 
-    private void MonsterEncounterRestart(MonsterTemplate monster) {
+    private void MonsterEncounterRestart(Monster monster) {
         ClassLoader classloader = ClassLoader.getSystemClassLoader();
         File file = new File(classloader.getResource("Monsters/"+monster.getAssetName()+".png").getFile());
         MessageBuilder mb = new MessageBuilder();

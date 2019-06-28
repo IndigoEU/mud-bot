@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Monsters;
 
-public class Slime extends MonsterTemplate {
+public class Slime extends Monster {
     public Slime() {
         this.name = "Slime";
         this.assetName = "slime";

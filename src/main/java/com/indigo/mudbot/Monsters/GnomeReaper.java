@@ -1,6 +1,6 @@
 package com.indigo.mudbot.Monsters;
 
-public class GnomeReaper extends MonsterTemplate {
+public class GnomeReaper extends Monster {
     public GnomeReaper() {
         this.name = "Gnome Reaper";
         this.assetName = "gnomereaper";
