@@ -9,5 +9,6 @@ this.price = 350;
 this.accuracy = 80;
 this.description = "Slice and dice while looking cool, that´s how it works right?";
 this.speed = 7;
+this.emoteName = "ScytheMud"
           }
 }
