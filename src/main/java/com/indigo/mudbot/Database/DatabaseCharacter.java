@@ -12,9 +12,13 @@ public class DatabaseCharacter {
     private String name;
     private int currentHp;
     private int maxHp;
-    private int equipArmor;
     private int equipWeapon;
+    private int currency;
+    private int xp;
+    private int level;
 
+    public int getCurrency(){ return currency; }
+    public void setCurrency(int currency){ this.currency = currency; }
     public String getCharacterId() { return characterId; }
     public void setCharacterId(String characterId) { this.characterId = characterId; }
     public String getInventoryId() { return inventoryId; }
@@ -25,12 +29,26 @@ public class DatabaseCharacter {
     public void setCurrentHp(int currentHp) { this.currentHp = currentHp; }
     public int getMaxHp() { return maxHp; }
     public void setMaxHp(int maxHp) { this.maxHp = maxHp; }
-    public int getEquipArmor() { return equipArmor; }
-    public void setEquipArmor(int equipArmor) { this.equipArmor = equipArmor; }
     public int getEquipWeapon() { return equipWeapon; }
     public void setEquipWeapon(int equipWeapon) { this.equipWeapon = equipWeapon; }
     public int dealDamage(int damage) {
         this.currentHp -= damage;
         return this.currentHp;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
     }
 }

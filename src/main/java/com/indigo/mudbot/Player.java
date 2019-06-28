@@ -13,7 +13,7 @@ public class Player {
     public String getId() {
         return this.id;
     }
-
+    public int getCurrency() { return character.getCurrency(); }
     public String getName(){
         return this.character.getName();
     }

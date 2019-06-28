@@ -7,6 +7,7 @@ public class Item {
     public boolean canDrop;
     public String name;
     public String assetName;
+    public String emoteName;
 
     public String getName() {
         return name;
@@ -14,4 +15,5 @@ public class Item {
     public String getAssetName() {
         return assetName;
     }
+    public String getEmoteName() { return emoteName; }
 }

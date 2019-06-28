@@ -7,6 +7,7 @@ import com.indigo.mudbot.Items.*;
 import com.indigo.mudbot.Monsters.*;
 import com.indigo.mudbot.Weapons.*;
 import com.jagrosh.jdautilities.command.Command;
+import com.sun.prism.Texture;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +31,7 @@ public class Values {
     public static Map<Integer, Weapon> Weapons = new HashMap<>();
     public static Map<Integer, Shop> Shops = new HashMap<>();
     public static Map<Integer, Monster> Monsters = new HashMap<>();
+    public static Map<Integer, Item> Usable = new HashMap<>();
 
     static{
         Items.put(1, new Battleaxe());
@@ -68,5 +70,8 @@ public class Values {
         Monsters.put(7, new MutatedFlesh());
         Monsters.put(8, new GnomeReaper());
         Monsters.put(9, new DemonCat());
+
+        Usable.put(1, new HealingPotion());
+
     }
 }

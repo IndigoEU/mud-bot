@@ -9,7 +9,7 @@ public class HealingPotion extends Item {
         this.canDrop = true;
         this.description = "A rare brew capable of closing wounds. Drink carefully - it's easy to get addicted to it.";
     }
-    public void Heal() {
-
+    public int Use() {
+        return 50;
     }
 }

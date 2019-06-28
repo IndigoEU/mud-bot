@@ -18,6 +18,7 @@ public class Monster {
     public String getName(){ return this.name; }
 
     public int getHp(){
+        if(this.currentHP == 0) this.currentHP = this.maxHP;
         return this.currentHP;
     }
 
