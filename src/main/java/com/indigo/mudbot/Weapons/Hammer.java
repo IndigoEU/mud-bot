@@ -9,5 +9,6 @@ this.price = 1200;
 this.accuracy = 75;
 this.description = "Big, heavy hammer nice for pummeling your foes as epic as possible.";
 this.speed = 1;
+this.emoteName = "HammerMud"
           }
 }
