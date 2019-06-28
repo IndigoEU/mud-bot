@@ -9,6 +9,7 @@ import com.jagrosh.jdautilities.command.CommandEvent;
 public class Iteminfo extends Command {
     public Iteminfo() {
         this.name = "iteminfo";
+        this.description = let´s see you the item information"
     }
 
     @Override
