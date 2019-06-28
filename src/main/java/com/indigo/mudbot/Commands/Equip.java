@@ -20,6 +20,7 @@ public class Equip extends Command {
     private EventWaiter waiter;
     public Equip(EventWaiter waiter){
         this.name = "equip";
+        this name =  equip a weapon"
         this.waiter = waiter;
     }
 
