@@ -9,5 +9,6 @@ this.price = 1000;
 this.accuracy = 85;
 this.description = "The fanciest stabby-stab you will ever find, that lets you fight with elegance and power at the same time.";
 this.speed = 10;
+this.emoteName = "RapierMud"
           }
 }
