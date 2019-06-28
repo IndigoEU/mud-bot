@@ -11,5 +11,6 @@ public class SaltElemental extends Monster {
         this.spawnChance = 1;
         this.speed = 9;
         this.accuracy = 65;
+        this.loot = 125;
     }
 }

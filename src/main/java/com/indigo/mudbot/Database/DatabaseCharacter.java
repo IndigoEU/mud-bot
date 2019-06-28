@@ -17,6 +17,7 @@ public class DatabaseCharacter {
     private int currency;
     private int xp;
     private int level;
+    private int xpToLevel;
 
     public int getCurrency(){ return currency; }
     public void setCurrency(int currency){ this.currency = currency; }
@@ -52,6 +53,22 @@ public class DatabaseCharacter {
     public void setXp(int xp) {
         this.xp = xp;
     }
+    public void setXpToLevel(int xp) { this.xpToLevel = xp; }
+
+    public void gainXP(int xp) {
+        this.xp += xp;
+        if(this.xp >= this.xpToLevel)
+            levelUp();
+    }
+    private void levelUp(){
+        this.maxHp += 25;
+        this.currentHp = this.maxHp;
+        this.xpToLevel *= 1.5;
+        this.xp = 0;
+    }
+
+    public void gainMoney(int c) { this.currency += c; }
+    public void setMoney(int c) { this.currency = c; }
 
     public boolean addItem(int id) {
         DatabaseCharacterInventory inventory = Main.getDatabase().getJsonDBTemplate().findById(this.inventoryId, DatabaseCharacterInventory.class);

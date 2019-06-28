@@ -11,5 +11,6 @@ public class MutatedFlesh extends Monster {
         this.spawnChance = 4;
         this.speed = 1;
         this.accuracy = 55;
+        this.loot = 35;
     }
 }

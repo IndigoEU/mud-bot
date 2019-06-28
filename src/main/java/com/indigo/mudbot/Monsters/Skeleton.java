@@ -11,5 +11,6 @@ public class Skeleton extends Monster {
         this.spawnChance = 5;
         this.speed = 3;
         this.accuracy = 45;
+        this.loot = 25;
     }
 }

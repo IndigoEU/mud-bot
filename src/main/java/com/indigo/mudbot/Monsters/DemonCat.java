@@ -11,5 +11,6 @@ public class DemonCat extends Monster {
         this.spawnChance = 3;
         this.speed = 8;
         this.accuracy = 40;
+        this.loot = 50;
     }
 }

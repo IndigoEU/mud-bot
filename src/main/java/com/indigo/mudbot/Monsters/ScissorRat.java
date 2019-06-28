@@ -9,5 +9,6 @@ public class ScissorRat extends Monster {
         this.damage = 20;
         this.rewardXP = 150;
         this.spawnChance = 2;
+        this.loot = 75;
     }
 }

@@ -11,5 +11,6 @@ public class SmallFungus extends Monster {
         this.spawnChance = 4;
         this.speed = 5;
         this.accuracy = 55;
+        this.loot = 25;
     }
 }

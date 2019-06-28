@@ -56,10 +56,15 @@ public class Encounter {
             playerPower += Values.Weapons.get(weapon).attack * Values.Weapons.get(weapon).accuracy/10 * Values.Weapons.get(weapon).speed/5;
         }
         if(playerPower > monsterPower){
-            //loot
+            for(int i=0; i<session.getPlayers().length; i++)
+            {
+                session.getPlayers()[i].character.gainXP(monster.rewardXP);
+                session.getPlayers()[i].character.gainMoney(monster.loot);
+            }
         }
         else{
-            //game over
+            System.out.println("Game over");
+            return;
         }
     }
 

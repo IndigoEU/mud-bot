@@ -11,5 +11,6 @@ public class Spider extends Monster {
         this.spawnChance = 5;
         this.speed = 8;
         this.accuracy = 50;
+        this.loot = 25;
     }
 }

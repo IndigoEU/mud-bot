@@ -68,6 +68,8 @@ public class CreateCharacter extends Command {
                     newChar.setMaxHp(100);
                     newChar.setCurrentHp(100);
                     newChar.setEquipWeapon(3);
+                    newChar.setXpToLevel(100);
+                    newChar.setXp(0);
                     newChar.setName(res.getMessage().getContentRaw());
                     newChar.setInventoryId(String.valueOf(Main.getDatabase().getJsonDBTemplate().getCollection(DatabaseCharacterInventory.class).size()+1));
                     DatabaseCharacterInventory newInventory = new DatabaseCharacterInventory();

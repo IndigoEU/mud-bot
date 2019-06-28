@@ -11,5 +11,6 @@ public class Slime extends Monster {
         this.spawnChance = 5;
         this.speed = 2;
         this.accuracy = 40;
+        this.loot = 35;
     }
 }
